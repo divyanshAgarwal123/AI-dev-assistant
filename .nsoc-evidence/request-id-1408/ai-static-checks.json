@@ -1,0 +1,26 @@
+[
+  {
+    "name": "app-ruff",
+    "exitCode": 0
+  },
+  {
+    "name": "changed-ruff",
+    "exitCode": 0
+  },
+  {
+    "name": "black",
+    "exitCode": 0
+  },
+  {
+    "name": "isort",
+    "exitCode": 0
+  },
+  {
+    "name": "diff",
+    "exitCode": 0
+  },
+  {
+    "name": "source-secrets",
+    "exitCode": 0
+  }
+]

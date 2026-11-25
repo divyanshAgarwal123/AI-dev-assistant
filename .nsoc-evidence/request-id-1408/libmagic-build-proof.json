@@ -1,0 +1,23 @@
+{
+  "version": "5.48",
+  "officialSource": "https://astron.com/pub/file/file-5.48.tar.gz",
+  "publishedChecksumSource": "https://formulae.brew.sh/api/formula/libmagic.json",
+  "sha256": "ed14656883b23a364b4057c05595d93252da9bc473d30106519519d0da141283",
+  "prefix": "<NSOC_WORKSPACE>/.qa-tools/libmagic-5.48",
+  "checks": [
+    {
+      "command": "configure",
+      "exitCode": 0
+    },
+    {
+      "command": "make",
+      "exitCode": 0
+    },
+    {
+      "command": "install",
+      "exitCode": 0
+    }
+  ],
+  "installedAt": "2026-11-25T09:43:03.418386+00:00",
+  "scope": "PrivateQAdependencyonly; no Homebrew/globalconfig/PRrequirementsmodified"
+}

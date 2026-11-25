@@ -1,0 +1,1298 @@
+<NSOC_WORKSPACE>/ai-dev-assistant-1408/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:306: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the fixture scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to "function" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session". Set it to "fixture-scope" to keep the current behavior.
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+============================= test session starts ==============================
+platform darwin -- Python 3.12.11, pytest-9.2.0, pluggy-1.7.0 -- <NSOC_WORKSPACE>/ai-dev-assistant-1408/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: <NSOC_WORKSPACE>/ai-dev-assistant-1408
+configfile: pyproject.toml
+plugins: platformdirs-4.14.5, anyio-4.16.0, asyncio-1.5.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 792 items
+
+tests/test_admin_audit.py::test_redact_masks_sensitive_keys PASSED       [  0%]
+tests/test_admin_audit.py::test_non_admin_is_forbidden PASSED            [  0%]
+tests/test_admin_audit.py::test_unauthenticated_is_unauthorized PASSED   [  0%]
+tests/test_admin_audit.py::test_role_update_is_logged_and_queryable PASSED [  0%]
+tests/test_admin_audit.py::test_delete_user_is_logged PASSED             [  0%]
+tests/test_admin_audit.py::test_admin_cannot_delete_self PASSED          [  0%]
+tests/test_admin_audit.py::test_role_update_for_unknown_user_is_404 PASSED [  0%]
+tests/test_admin_audit.py::test_delete_unknown_user_is_404 PASSED        [  1%]
+tests/test_admin_audit.py::test_role_update_rejects_non_positive_user_id PASSED [  1%]
+tests/test_admin_audit.py::test_delete_user_rejects_non_positive_user_id PASSED [  1%]
+tests/test_admin_audit.py::test_audit_logs_rejects_invalid_filters PASSED [  1%]
+tests/test_admin_audit.py::test_audit_entries_are_append_only PASSED     [  1%]
+tests/test_admin_error_handling.py::test_list_audit_logs_db_failure_returns_503 PASSED [  1%]
+tests/test_admin_error_handling.py::test_update_user_role_db_failure_returns_503_and_rolls_back PASSED [  1%]
+tests/test_admin_error_handling.py::test_delete_user_db_failure_returns_503_and_rolls_back PASSED [  1%]
+tests/test_ai_provider.py::TestIsEnabled::test_true_when_enabled_and_key_present PASSED [  2%]
+tests/test_ai_provider.py::TestIsEnabled::test_false_when_llm_disabled PASSED [  2%]
+tests/test_ai_provider.py::TestIsEnabled::test_false_when_api_key_empty PASSED [  2%]
+tests/test_ai_provider.py::TestIsEnabled::test_false_when_both_missing PASSED [  2%]
+tests/test_ai_provider.py::TestCallLlmFallback::test_returns_none_when_disabled PASSED [  2%]
+tests/test_ai_provider.py::TestCallLlmFallback::test_returns_none_when_api_key_missing PASSED [  2%]
+tests/test_ai_provider.py::TestCallLlmFallback::test_returns_none_when_both_disabled_and_no_key PASSED [  2%]
+tests/test_ai_provider.py::TestCallLlmSuccess::test_openai_returns_stripped_content PASSED [  2%]
+tests/test_ai_provider.py::TestCallLlmSuccess::test_groq_returns_correct_content PASSED [  3%]
+tests/test_ai_provider.py::TestCallLlmSuccess::test_ollama_returns_correct_content PASSED [  3%]
+tests/test_ai_provider.py::TestCallLlmSuccess::test_multiline_response_preserved PASSED [  3%]
+tests/test_ai_provider.py::TestCallLlmSuccess::test_whitespace_only_response_stripped_to_empty PASSED [  3%]
+tests/test_ai_provider.py::TestCallLlmPayload::test_sends_correct_model_and_messages PASSED [  3%]
+tests/test_ai_provider.py::TestCallLlmPayload::test_sends_correct_auth_header PASSED [  3%]
+tests/test_ai_provider.py::TestCallLlmPayload::test_calls_correct_openai_endpoint PASSED [  3%]
+tests/test_ai_provider.py::TestCallLlmPayload::test_calls_correct_groq_endpoint PASSED [  3%]
+tests/test_ai_provider.py::TestCallLlmPayload::test_calls_correct_ollama_endpoint PASSED [  4%]
+tests/test_ai_provider.py::TestCallLlmErrors::test_returns_none_on_500_error PASSED [  4%]
+tests/test_ai_provider.py::TestCallLlmErrors::test_returns_none_on_401_unauthorized PASSED [  4%]
+tests/test_ai_provider.py::TestCallLlmErrors::test_returns_none_on_429_rate_limit PASSED [  4%]
+tests/test_ai_provider.py::TestCallLlmErrors::test_returns_none_on_timeout PASSED [  4%]
+tests/test_ai_provider.py::TestCallLlmErrors::test_returns_none_on_network_error PASSED [  4%]
+tests/test_ai_provider.py::TestCallLlmErrors::test_returns_none_on_malformed_json PASSED [  4%]
+tests/test_ai_provider.py::TestCallLlmErrors::test_returns_none_on_empty_choices PASSED [  4%]
+tests/test_ai_provider.py::TestCallLlmRetryMetric::test_failure_then_success_counts_one_retry PASSED [  5%]
+tests/test_ai_provider.py::TestCallLlmRetryMetric::test_success_on_first_attempt_counts_nothing PASSED [  5%]
+tests/test_ai_provider.py::TestCallLlmRetryMetric::test_labels_use_provider_and_failure_type PASSED [  5%]
+tests/test_ai_provider.py::TestCallLlmRetryMetric::test_exhausted_retries_count_only_actual_retries PASSED [  5%]
+tests/test_ai_provider.py::TestCallLlmRetryMetric::test_non_retryable_client_error_counts_nothing PASSED [  5%]
+tests/test_ai_provider.py::TestCallLlmRetryMetric::test_metrics_disabled_skips_counter PASSED [  5%]
+tests/test_ai_provider.py::TestCallLlmRetryMetric::test_retry_series_exposed_on_metrics_endpoint PASSED [  5%]
+tests/test_ast_analyzer.py::test_mutable_default_list PASSED             [  5%]
+tests/test_ast_analyzer.py::test_mutable_default_dict PASSED             [  6%]
+tests/test_ast_analyzer.py::test_mutable_default_set PASSED              [  6%]
+tests/test_ast_analyzer.py::test_no_mutable_default_with_none PASSED     [  6%]
+tests/test_ast_analyzer.py::test_no_mutable_default_immutable PASSED     [  6%]
+tests/test_ast_analyzer.py::test_bare_except_detected PASSED             [  6%]
+tests/test_ast_analyzer.py::test_bare_except_line_number PASSED          [  6%]
+tests/test_ast_analyzer.py::test_specific_except_not_flagged PASSED      [  6%]
+tests/test_ast_analyzer.py::test_except_exception_not_flagged PASSED     [  6%]
+tests/test_ast_analyzer.py::test_eval_detected PASSED                    [  7%]
+tests/test_ast_analyzer.py::test_exec_detected PASSED                    [  7%]
+tests/test_ast_analyzer.py::test_eval_line_number PASSED                 [  7%]
+tests/test_ast_analyzer.py::test_eval_severity_is_error PASSED           [  7%]
+tests/test_ast_analyzer.py::test_no_false_positive_ast_literal_eval PASSED [  7%]
+tests/test_ast_analyzer.py::test_shadow_list PASSED                      [  7%]
+tests/test_ast_analyzer.py::test_shadow_id PASSED                        [  7%]
+tests/test_ast_analyzer.py::test_shadow_len PASSED                       [  7%]
+tests/test_ast_analyzer.py::test_shadow_print PASSED                     [  8%]
+tests/test_ast_analyzer.py::test_no_shadow_for_user_names PASSED         [  8%]
+tests/test_ast_analyzer.py::test_unreachable_after_return PASSED         [  8%]
+tests/test_ast_analyzer.py::test_unreachable_after_raise PASSED          [  8%]
+tests/test_ast_analyzer.py::test_reachable_code_not_flagged PASSED       [  8%]
+tests/test_ast_analyzer.py::test_unreachable_line_number PASSED          [  8%]
+tests/test_ast_analyzer.py::test_syntax_error_returns_issue PASSED       [  8%]
+tests/test_ast_analyzer.py::test_syntax_error_severity PASSED            [  8%]
+tests/test_ast_analyzer.py::test_syntax_error_does_not_crash PASSED      [  9%]
+tests/test_ast_analyzer.py::test_clean_code_returns_no_ast_issues PASSED [  9%]
+tests/test_ast_analyzer.py::test_issue_shape_has_required_fields PASSED  [  9%]
+tests/test_ast_analyzer.py::test_unreachable_code PASSED                 [  9%]
+tests/test_ast_analyzer.py::test_unused_import PASSED                    [  9%]
+tests/test_ast_analyzer.py::test_unused_argument PASSED                  [  9%]
+tests/test_ast_analyzer.py::test_clean_code_no_false_positives PASSED    [  9%]
+tests/test_ast_analyzer.py::test_correct_line_number_unreachable PASSED  [  9%]
+tests/test_ast_analyzer.py::test_self_not_flagged_as_unused PASSED       [ 10%]
+tests/test_ast_analyzer.py::test_underscore_param_not_flagged PASSED     [ 10%]
+tests/test_ast_analyzer.py::test_used_alias_not_flagged PASSED           [ 10%]
+tests/test_ast_analyzer.py::test_too_many_returns_exact_boundary PASSED  [ 10%]
+tests/test_ast_analyzer.py::test_unreachable_only_flags_after_not_before PASSED [ 10%]
+tests/test_ast_analyzer.py::test_nested_function_returns_not_counted_in_outer PASSED [ 10%]
+tests/test_ast_analyzer.py::test_deep_nesting_exact_boundary PASSED      [ 10%]
+tests/test_ast_analyzer.py::test_too_many_returns_triggered PASSED       [ 10%]
+tests/test_ast_analyzer.py::test_deep_nesting PASSED                     [ 11%]
+tests/test_ast_analyzer.py::test_used_argument_not_flagged PASSED        [ 11%]
+tests/test_ast_analyzer.py::test_used_import_not_flagged PASSED          [ 11%]
+tests/test_auth_and_user_data.py::test_auth_and_user_data_flow PASSED    [ 11%]
+tests/test_auth_endpoints.py::test_auth_routes_are_exposed_in_openapi PASSED [ 11%]
+tests/test_auth_endpoints.py::test_signup_login_and_me_happy_path PASSED [ 11%]
+tests/test_auth_endpoints.py::test_login_short_password_not_rejected_by_schema PASSED [ 11%]
+tests/test_auth_endpoints.py::test_signup_duplicate_email_returns_409 PASSED [ 11%]
+tests/test_auth_endpoints.py::test_me_rejects_missing_and_invalid_token PASSED [ 12%]
+tests/test_auth_endpoints.py::test_access_token_carries_unique_jti_and_iat PASSED [ 12%]
+tests/test_auth_endpoints.py::test_logout_revokes_token_and_blocks_replay PASSED [ 12%]
+tests/test_auth_endpoints.py::test_logout_requires_authentication PASSED [ 12%]
+tests/test_auth_endpoints.py::test_revoking_one_token_leaves_other_sessions_valid PASSED [ 12%]
+tests/test_cache.py::test_cache_key_uses_sha256_digest PASSED            [ 12%]
+tests/test_cache.py::test_cache_key_does_not_use_md5 PASSED              [ 12%]
+tests/test_cache.py::test_cache_set_and_get_success PASSED               [ 13%]
+tests/test_cache.py::test_cache_disabled_returns_none PASSED             [ 13%]
+tests/test_cache.py::test_cache_expiration PASSED                        [ 13%]
+tests/test_cache_regression.py::test_cache_miss_returns_none PASSED      [ 13%]
+tests/test_cache_regression.py::test_cache_hit_returns_stored_value PASSED [ 13%]
+tests/test_cache_regression.py::test_cache_miss_for_different_code PASSED [ 13%]
+tests/test_cache_regression.py::test_cache_set_overwrites_existing_value PASSED [ 13%]
+tests/test_cache_regression.py::test_cache_get_returns_none_when_disabled PASSED [ 13%]
+tests/test_cache_regression.py::test_cache_set_does_nothing_when_disabled PASSED [ 14%]
+tests/test_cache_regression.py::test_cache_returns_none_after_ttl_expires PASSED [ 14%]
+tests/test_cache_regression.py::test_cache_evicts_oldest_entry_when_full PASSED [ 14%]
+tests/test_cache_regression.py::test_different_namespaces_dont_collide PASSED [ 14%]
+tests/test_cache_regression.py::test_clear_memory_removes_all_entries PASSED [ 14%]
+tests/test_cache_regression.py::test_redis_get_failure_falls_back_to_memory PASSED [ 14%]
+tests/test_cache_regression.py::test_redis_set_failure_does_not_raise PASSED [ 14%]
+tests/test_code_assistant.py::test_chat_fallback_reply_without_code_returns_retry_prompt PASSED [ 14%]
+tests/test_code_assistant.py::test_chat_fallback_reply_with_code_includes_detected_language_and_level PASSED [ 15%]
+tests/test_code_assistant.py::test_chat_fallback_reply_for_error_query_suggests_common_issues PASSED [ 15%]
+tests/test_code_assistant.py::test_detect_language_identifies_python PASSED [ 15%]
+tests/test_code_assistant.py::test_detect_language_identifies_javascript PASSED [ 15%]
+tests/test_code_assistant.py::test_detect_language_identifies_unknown PASSED [ 15%]
+tests/test_code_assistant.py::test_run_bug_detection_detects_bare_except PASSED [ 15%]
+tests/test_code_assistant.py::test_run_bug_detection_returns_empty_for_clean_code PASSED [ 15%]
+tests/test_code_assistant.py::test_run_explanation_identifies_simple_python PASSED [ 15%]
+tests/test_code_assistant.py::test_debug_code_detects_zero_division PASSED [ 16%]
+tests/test_code_assistant.py::test_debug_code_returns_no_issues_for_clean_code PASSED [ 16%]
+tests/test_code_assistant.py::test_run_suggestions_detects_improvements PASSED [ 16%]
+tests/test_code_assistant.py::test_run_suggestions_returns_no_issues_for_clean_code PASSED [ 16%]
+tests/test_code_assistant.py::test_full_analysis_returns_complete_result PASSED [ 16%]
+tests/test_collaboration_event_flow.py::test_code_update_is_broadcast_to_everyone_including_sender PASSED [ 16%]
+tests/test_collaboration_event_flow.py::test_code_update_without_language_keeps_the_room_language PASSED [ 16%]
+tests/test_collaboration_event_flow.py::test_code_update_at_or_ahead_of_room_version_is_accepted[1] PASSED [ 16%]
+tests/test_collaboration_event_flow.py::test_code_update_at_or_ahead_of_room_version_is_accepted[2] PASSED [ 17%]
+tests/test_collaboration_event_flow.py::test_code_update_at_or_ahead_of_room_version_is_accepted[7] PASSED [ 17%]
+tests/test_collaboration_event_flow.py::test_stale_code_update_answers_only_the_sender_with_full_state PASSED [ 17%]
+tests/test_collaboration_event_flow.py::test_cursor_update_goes_to_everyone_but_the_sender PASSED [ 17%]
+tests/test_collaboration_event_flow.py::test_cursor_update_is_not_sent_across_rooms PASSED [ 17%]
+tests/test_collaboration_event_flow.py::test_comment_is_broadcast_to_everyone_with_the_full_list PASSED [ 17%]
+tests/test_collaboration_event_flow.py::test_user_colors_cycle_through_the_palette PASSED [ 17%]
+tests/test_collaboration_event_flow.py::test_ping_answers_only_the_sender PASSED [ 17%]
+tests/test_collaboration_event_flow.py::test_unsupported_message_types_error_only_the_sender[message0-Unsupported collaboration message type: unknown_event] PASSED [ 18%]
+tests/test_collaboration_event_flow.py::test_unsupported_message_types_error_only_the_sender[message1-Unsupported collaboration message type: None] PASSED [ 18%]
+tests/test_collaboration_event_flow.py::test_unsupported_message_types_error_only_the_sender[message2-Unsupported collaboration message type: None] PASSED [ 18%]
+tests/test_collaboration_event_flow.py::test_unsupported_message_types_error_only_the_sender[message3-Unsupported collaboration message type: 7] PASSED [ 18%]
+tests/test_collaboration_event_flow.py::test_unsupported_message_types_error_only_the_sender[message4-Unsupported collaboration message type: ['code_update']] PASSED [ 18%]
+tests/test_collaboration_event_flow.py::test_unsupported_message_types_error_only_the_sender[message5-Unsupported collaboration message type: {'a': 1}] PASSED [ 18%]
+tests/test_collaboration_event_flow.py::test_unsupported_message_types_error_only_the_sender[message6-Unsupported collaboration message type: Code_Update] PASSED [ 18%]
+tests/test_collaboration_event_flow.py::test_unsupported_message_types_error_only_the_sender[message7-Unsupported collaboration message type: pong] PASSED [ 18%]
+tests/test_collaboration_event_flow.py::test_unsupported_message_types_error_only_the_sender[message8-Unsupported collaboration message type: presence_update] PASSED [ 19%]
+tests/test_collaboration_event_flow.py::test_invalid_payload_errors_only_the_sender_and_changes_nothing[message0-code must be a string] PASSED [ 19%]
+tests/test_collaboration_event_flow.py::test_invalid_payload_errors_only_the_sender_and_changes_nothing[message1-cursor must be an object] PASSED [ 19%]
+tests/test_collaboration_event_flow.py::test_invalid_payload_errors_only_the_sender_and_changes_nothing[message2-comment text is required] PASSED [ 19%]
+tests/test_collaboration_event_flow.py::test_handlers_receive_the_validated_payload_and_invalid_ones_are_skipped PASSED [ 19%]
+tests/test_collaboration_event_flow.py::test_messages_from_departed_or_unknown_clients_are_ignored PASSED [ 19%]
+tests/test_collaboration_event_flow.py::test_errors_use_the_documented_shape_and_skip_clients_without_a_socket PASSED [ 19%]
+tests/test_collaboration_resilience.py::test_invalid_json_frame_gets_error_and_keeps_connection PASSED [ 19%]
+tests/test_collaboration_resilience.py::test_binary_frame_gets_error_and_keeps_connection PASSED [ 20%]
+tests/test_collaboration_resilience.py::test_bad_frame_does_not_disturb_other_clients PASSED [ 20%]
+tests/test_collaboration_resilience.py::test_handler_crash_returns_generic_error_and_logs PASSED [ 20%]
+tests/test_collaboration_resilience.py::test_handler_crash_does_not_end_the_session PASSED [ 20%]
+tests/test_collaboration_resilience.py::test_dead_sender_socket_ends_loop_and_cleans_room PASSED [ 20%]
+tests/test_collaboration_resilience.py::test_broadcast_drops_dead_socket_whatever_the_error[RuntimeError] PASSED [ 20%]
+tests/test_collaboration_resilience.py::test_broadcast_drops_dead_socket_whatever_the_error[OSError] PASSED [ 20%]
+tests/test_collaboration_resilience.py::test_broadcast_drops_dead_socket_whatever_the_error[ConnectionResetError] PASSED [ 20%]
+tests/test_collaboration_resilience.py::test_broadcast_drops_dead_socket_whatever_the_error[WebSocketDisconnect] PASSED [ 21%]
+tests/test_collaboration_resilience.py::test_broadcast_to_only_dead_sockets_removes_the_room PASSED [ 21%]
+tests/test_collaboration_resilience.py::test_reconnect_with_same_name_drops_the_ghost_entry PASSED [ 21%]
+tests/test_collaboration_resilience.py::test_reconnect_over_live_socket_keeps_both_until_one_dies PASSED [ 21%]
+tests/test_collaboration_router.py::test_valid_websocket_connection_and_routing PASSED [ 21%]
+tests/test_collaboration_router.py::test_session_isolation_and_concurrent_sessions PASSED [ 21%]
+tests/test_collaboration_router.py::test_missing_name_query_parameter PASSED [ 21%]
+tests/test_collaboration_router.py::test_session_id_with_special_characters PASSED [ 21%]
+tests/test_collaboration_validation.py::test_invalid_code_update_returns_error_and_keeps_connection[payload0-code is required] PASSED [ 22%]
+tests/test_collaboration_validation.py::test_invalid_code_update_returns_error_and_keeps_connection[payload1-code must be a string] PASSED [ 22%]
+tests/test_collaboration_validation.py::test_invalid_code_update_returns_error_and_keeps_connection[payload2-code must be a string] PASSED [ 22%]
+tests/test_collaboration_validation.py::test_invalid_code_update_returns_error_and_keeps_connection[payload3-code must be a string] PASSED [ 22%]
+tests/test_collaboration_validation.py::test_invalid_code_update_returns_error_and_keeps_connection[payload4-code exceeds 50000 characters] PASSED [ 22%]
+tests/test_collaboration_validation.py::test_invalid_code_update_returns_error_and_keeps_connection[payload5-version must be an integer] PASSED [ 22%]
+tests/test_collaboration_validation.py::test_invalid_code_update_returns_error_and_keeps_connection[payload6-version must be an integer] PASSED [ 22%]
+tests/test_collaboration_validation.py::test_invalid_code_update_returns_error_and_keeps_connection[payload7-version must be an integer] PASSED [ 22%]
+tests/test_collaboration_validation.py::test_invalid_code_update_returns_error_and_keeps_connection[payload8-version must not be negative] PASSED [ 23%]
+tests/test_collaboration_validation.py::test_invalid_code_update_returns_error_and_keeps_connection[payload9-language must be a string] PASSED [ 23%]
+tests/test_collaboration_validation.py::test_invalid_code_update_returns_error_and_keeps_connection[payload10-language exceeds 32 characters] PASSED [ 23%]
+tests/test_collaboration_validation.py::test_invalid_code_update_does_not_change_room_state PASSED [ 23%]
+tests/test_collaboration_validation.py::test_code_update_boundary_values_are_accepted PASSED [ 23%]
+tests/test_collaboration_validation.py::test_code_update_without_version_or_language_still_works PASSED [ 23%]
+tests/test_collaboration_validation.py::test_invalid_cursor_update_returns_error_and_keeps_connection[payload0-cursor must be an object] PASSED [ 23%]
+tests/test_collaboration_validation.py::test_invalid_cursor_update_returns_error_and_keeps_connection[payload1-cursor must be an object] PASSED [ 23%]
+tests/test_collaboration_validation.py::test_invalid_cursor_update_returns_error_and_keeps_connection[payload2-cursor must be an object] PASSED [ 24%]
+tests/test_collaboration_validation.py::test_invalid_cursor_update_returns_error_and_keeps_connection[payload3-cursor must be an object] PASSED [ 24%]
+tests/test_collaboration_validation.py::test_invalid_cursor_update_returns_error_and_keeps_connection[payload4-cursor.line must be an integer] PASSED [ 24%]
+tests/test_collaboration_validation.py::test_invalid_cursor_update_returns_error_and_keeps_connection[payload5-cursor.line must be an integer] PASSED [ 24%]
+tests/test_collaboration_validation.py::test_invalid_cursor_update_returns_error_and_keeps_connection[payload6-cursor.column must be an integer] PASSED [ 24%]
+tests/test_collaboration_validation.py::test_invalid_cursor_update_returns_error_and_keeps_connection[payload7-cursor.selectionStart must be an integer] PASSED [ 24%]
+tests/test_collaboration_validation.py::test_invalid_cursor_update_returns_error_and_keeps_connection[payload8-cursor.selectionEnd must be an integer] PASSED [ 24%]
+tests/test_collaboration_validation.py::test_invalid_cursor_update_returns_error_and_keeps_connection[payload9-cursor.line is out of range] PASSED [ 25%]
+tests/test_collaboration_validation.py::test_cursor_update_clamps_low_values_and_defaults_missing_fields PASSED [ 25%]
+tests/test_collaboration_validation.py::test_invalid_comment_returns_error_and_keeps_connection[payload0-comment text is required] PASSED [ 25%]
+tests/test_collaboration_validation.py::test_invalid_comment_returns_error_and_keeps_connection[payload1-comment text is required] PASSED [ 25%]
+tests/test_collaboration_validation.py::test_invalid_comment_returns_error_and_keeps_connection[payload2-comment text is required] PASSED [ 25%]
+tests/test_collaboration_validation.py::test_invalid_comment_returns_error_and_keeps_connection[payload3-comment text is required] PASSED [ 25%]
+tests/test_collaboration_validation.py::test_invalid_comment_returns_error_and_keeps_connection[payload4-comment text must be a string] PASSED [ 25%]
+tests/test_collaboration_validation.py::test_invalid_comment_returns_error_and_keeps_connection[payload5-comment text must be a string] PASSED [ 25%]
+tests/test_collaboration_validation.py::test_invalid_comment_returns_error_and_keeps_connection[payload6-comment text must be a string] PASSED [ 26%]
+tests/test_collaboration_validation.py::test_invalid_comment_returns_error_and_keeps_connection[payload7-comment exceeds 1000 characters] PASSED [ 26%]
+tests/test_collaboration_validation.py::test_invalid_comment_returns_error_and_keeps_connection[payload8-line must be an integer] PASSED [ 26%]
+tests/test_collaboration_validation.py::test_invalid_comment_returns_error_and_keeps_connection[payload9-line must be an integer] PASSED [ 26%]
+tests/test_collaboration_validation.py::test_invalid_comment_returns_error_and_keeps_connection[payload10-line must be an integer] PASSED [ 26%]
+tests/test_collaboration_validation.py::test_invalid_comment_returns_error_and_keeps_connection[payload11-line is out of range] PASSED [ 26%]
+tests/test_collaboration_validation.py::test_comment_boundary_values_are_accepted PASSED [ 26%]
+tests/test_collaboration_validation.py::test_comment_text_is_stripped_and_line_defaults_to_one PASSED [ 26%]
+tests/test_collaboration_validation.py::test_missing_or_non_string_type_gets_error_not_crash[payload0-Unsupported collaboration message type: None] PASSED [ 27%]
+tests/test_collaboration_validation.py::test_missing_or_non_string_type_gets_error_not_crash[payload1-Unsupported collaboration message type: None] PASSED [ 27%]
+tests/test_collaboration_validation.py::test_missing_or_non_string_type_gets_error_not_crash[payload2-Unsupported collaboration message type: ['code_update']] PASSED [ 27%]
+tests/test_collaboration_validation.py::test_missing_or_non_string_type_gets_error_not_crash[payload3-Unsupported collaboration message type: {'a': 1}] PASSED [ 27%]
+tests/test_collaboration_validation.py::test_missing_or_non_string_type_gets_error_not_crash[payload4-Unsupported collaboration message type: 7] PASSED [ 27%]
+tests/test_collaboration_validation.py::test_non_object_payload_is_rejected_and_connection_stays_open[payload0] PASSED [ 27%]
+tests/test_collaboration_validation.py::test_non_object_payload_is_rejected_and_connection_stays_open[code_update] PASSED [ 27%]
+tests/test_collaboration_validation.py::test_non_object_payload_is_rejected_and_connection_stays_open[42] PASSED [ 27%]
+tests/test_collaboration_validation.py::test_non_object_payload_is_rejected_and_connection_stays_open[None] PASSED [ 28%]
+tests/test_collaboration_validation.py::test_non_object_payload_is_rejected_and_connection_stays_open[True] PASSED [ 28%]
+tests/test_collaboration_validation.py::test_invalid_message_only_reaches_the_sender PASSED [ 28%]
+tests/test_collaboration_validation.py::test_message_from_departed_client_does_not_recreate_room PASSED [ 28%]
+tests/test_collaboration_validation.py::test_message_from_departed_client_is_ignored_in_a_live_room PASSED [ 28%]
+tests/test_collaboration_validation.py::test_failed_join_does_not_leave_a_half_joined_client PASSED [ 28%]
+tests/test_collaboration_validation.py::test_unexpected_loop_error_still_cleans_up_the_client PASSED [ 28%]
+tests/test_collaboration_ws.py::test_collaboration_join_returns_session_state PASSED [ 28%]
+tests/test_collaboration_ws.py::test_collaboration_broadcasts_code_updates_to_other_clients PASSED [ 29%]
+tests/test_collaboration_ws.py::test_collaboration_rejects_stale_code_update_with_sync_required PASSED [ 29%]
+tests/test_collaboration_ws.py::test_collaboration_broadcasts_cursor_updates PASSED [ 29%]
+tests/test_collaboration_ws.py::test_collaboration_broadcasts_comments PASSED [ 29%]
+tests/test_collaboration_ws.py::test_collaboration_ping_returns_pong PASSED [ 29%]
+tests/test_collaboration_ws.py::test_presence_sync_broadcasts_on_join_and_leave PASSED [ 29%]
+tests/test_collaboration_ws.py::test_presence_sync_handles_name_sanitization PASSED [ 29%]
+tests/test_collaboration_ws.py::test_presence_sync_session_cleanup PASSED [ 29%]
+tests/test_collaboration_ws.py::test_collaboration_rejects_unsupported_message_type PASSED [ 30%]
+tests/test_database_observability.py::test_db_observability_metrics_recorded PASSED [ 30%]
+tests/test_database_observability.py::test_db_observability_metrics_disabled PASSED [ 30%]
+tests/test_database_service.py::test_hash_code_is_deterministic PASSED   [ 30%]
+tests/test_database_service.py::test_save_and_get_entry PASSED           [ 30%]
+tests/test_database_service.py::test_count_entries PASSED                [ 30%]
+tests/test_database_service.py::test_delete_entry PASSED                 [ 30%]
+tests/test_database_service.py::test_clear_entries PASSED                [ 30%]
+tests/test_database_service.py::test_search_entries PASSED               [ 31%]
+tests/test_database_service.py::test_get_entries_default_order PASSED    [ 31%]
+tests/test_database_service.py::test_invalid_sort_by_fallback PASSED     [ 31%]
+tests/test_database_service.py::test_invalid_order_fallback PASSED       [ 31%]
+tests/test_database_service.py::test_init_db_is_idempotent PASSED        [ 31%]
+tests/test_database_service.py::test_search_invalid_fts_query_returns_empty PASSED [ 31%]
+tests/test_database_service.py::test_delete_missing_entry_returns_false PASSED [ 31%]
+tests/test_database_service.py::test_save_entry_raises_on_connection_failure PASSED [ 31%]
+tests/test_dependency_extraction.py::test_python_import_forms PASSED     [ 32%]
+tests/test_dependency_extraction.py::test_python_stdlib_is_excluded PASSED [ 32%]
+tests/test_dependency_extraction.py::test_javascript_require_and_import_forms PASSED [ 32%]
+tests/test_dependency_extraction.py::test_typescript_default_import_is_captured PASSED [ 32%]
+tests/test_dependency_extraction.py::test_relative_imports_are_not_dependencies PASSED [ 32%]
+tests/test_dependency_extraction.py::test_scoped_and_subpath_npm_imports_resolve_to_package_name PASSED [ 32%]
+tests/test_dependency_extraction.py::test_unsupported_language_returns_empty_list PASSED [ 32%]
+tests/test_dependency_extraction.py::test_extraction_is_deterministic_and_deduplicated PASSED [ 32%]
+tests/test_dependency_extraction.py::test_run_suggestions_populates_dependencies PASSED [ 33%]
+tests/test_digest.py::test_subscribe_success PASSED                      [ 33%]
+tests/test_digest.py::test_subscribe_duplicate_returns_409 PASSED        [ 33%]
+tests/test_digest.py::test_subscribe_re_activates_after_unsubscribe PASSED [ 33%]
+tests/test_digest.py::test_unsubscribe_success PASSED                    [ 33%]
+tests/test_digest.py::test_unsubscribe_wrong_token PASSED                [ 33%]
+tests/test_digest.py::test_unsubscribe_nonexistent PASSED                [ 33%]
+tests/test_digest.py::test_get_unsubscribe_link PASSED                   [ 33%]
+tests/test_digest.py::test_invalid_email PASSED                          [ 34%]
+tests/test_digest.py::test_subscribe_stores_token PASSED                 [ 34%]
+tests/test_digest.py::test_digest_email_uses_mounted_unsubscribe_route PASSED [ 34%]
+tests/test_digest.py::test_unsubscribe_url_handles_base_url_slashes[https://qyverixai.onrender.com-https://qyverixai.onrender.com/subscribe/unsubscribe] PASSED [ 34%]
+tests/test_digest.py::test_unsubscribe_url_handles_base_url_slashes[https://qyverixai.onrender.com/-https://qyverixai.onrender.com/subscribe/unsubscribe] PASSED [ 34%]
+tests/test_digest.py::test_unsubscribe_url_encodes_query_parameters PASSED [ 34%]
+tests/test_digest.py::test_email_observability_metrics_on_success PASSED [ 34%]
+tests/test_digest.py::test_email_observability_metrics_on_failure PASSED [ 34%]
+tests/test_endpoints.py::test_root PASSED                                [ 35%]
+tests/test_endpoints.py::test_health PASSED                              [ 35%]
+tests/test_endpoints.py::test_rate_limit_headers_on_success_response PASSED [ 35%]
+tests/test_endpoints.py::test_rate_limit_returns_429_with_retry_after_header PASSED [ 35%]
+tests/test_endpoints.py::test_explanation_python PASSED                  [ 35%]
+tests/test_endpoints.py::test_explanation_handles_unexpected_error PASSED [ 35%]
+tests/test_endpoints.py::test_explanation_no_language_hint PASSED        [ 35%]
+tests/test_endpoints.py::test_explanation_rust PASSED                    [ 35%]
+tests/test_endpoints.py::test_explanation_detects_rust_without_hint PASSED [ 36%]
+tests/test_endpoints.py::test_explanation_accepts_rust_hint_alias PASSED [ 36%]
+tests/test_endpoints.py::test_explanation_empty_code PASSED              [ 36%]
+tests/test_endpoints.py::test_explanation_too_long PASSED                [ 36%]
+tests/test_endpoints.py::test_explanation_typescript PASSED              [ 36%]
+tests/test_endpoints.py::test_explanation_java PASSED                    [ 36%]
+tests/test_endpoints.py::test_explanation_cpp PASSED                     [ 36%]
+tests/test_endpoints.py::test_explanation_cyclomatic_fields_present PASSED [ 36%]
+tests/test_endpoints.py::test_explanation_cyclomatic_simple PASSED       [ 37%]
+tests/test_endpoints.py::test_explanation_cyclomatic_moderate PASSED     [ 37%]
+tests/test_endpoints.py::test_explanation_cyclomatic_high PASSED         [ 37%]
+tests/test_endpoints.py::test_explanation_cyclomatic_very_high PASSED    [ 37%]
+tests/test_endpoints.py::test_debug_detects_zero_division PASSED         [ 37%]
+tests/test_endpoints.py::test_debug_detects_hardcoded_secret PASSED      [ 37%]
+tests/test_endpoints.py::test_debug_detects_bare_except PASSED           [ 37%]
+tests/test_endpoints.py::test_debug_detects_eval PASSED                  [ 38%]
+tests/test_endpoints.py::test_debug_clean_code PASSED                    [ 38%]
+tests/test_endpoints.py::test_debug_javascript PASSED                    [ 38%]
+tests/test_endpoints.py::test_debug_java PASSED                          [ 38%]
+tests/test_endpoints.py::test_debug_cpp PASSED                           [ 38%]
+tests/test_endpoints.py::test_explanation_php PASSED                     [ 38%]
+tests/test_endpoints.py::test_explanation_detects_php_without_hint PASSED [ 38%]
+tests/test_endpoints.py::test_debug_php PASSED                           [ 38%]
+tests/test_endpoints.py::test_debug_php_buggy_patterns PASSED            [ 39%]
+tests/test_endpoints.py::test_debug_rust PASSED                          [ 39%]
+tests/test_endpoints.py::test_debug_rust_buggy_patterns PASSED           [ 39%]
+tests/test_endpoints.py::test_debug_kotlin PASSED                        [ 39%]
+tests/test_endpoints.py::test_debug_cpp_syntax_errors PASSED             [ 39%]
+tests/test_endpoints.py::test_debug_issue_has_required_fields PASSED     [ 39%]
+tests/test_endpoints.py::test_js_ts_security_patterns PASSED             [ 39%]
+tests/test_endpoints.py::test_suggestions_returns_score PASSED           [ 39%]
+tests/test_endpoints.py::test_suggestions_perfect_score PASSED           [ 40%]
+tests/test_endpoints.py::test_suggestions_observability_print_only_python PASSED [ 40%]
+tests/test_endpoints.py::test_full_analyze PASSED                        [ 40%]
+tests/test_endpoints.py::test_full_analyze_uses_cache_for_identical_inputs PASSED [ 40%]
+tests/test_endpoints.py::test_analyze_cache_expires PASSED               [ 40%]
+tests/test_endpoints.py::test_memory_cache_evicts_least_recently_used_entries PASSED [ 40%]
+tests/test_endpoints.py::test_full_analyze_all_languages PASSED          [ 40%]
+tests/test_endpoints.py::test_missing_code_field PASSED                  [ 40%]
+tests/test_endpoints.py::test_unicode_code PASSED                        [ 41%]
+tests/test_endpoints.py::test_single_line_code PASSED                    [ 41%]
+tests/test_endpoints.py::test_post_stream_returns_event_stream_content_type PASSED [ 41%]
+tests/test_endpoints.py::test_post_stream_emits_all_sections PASSED      [ 41%]
+tests/test_endpoints.py::test_get_stream_returns_event_stream_content_type PASSED [ 41%]
+tests/test_endpoints.py::test_get_stream_emits_all_sections PASSED       [ 41%]
+tests/test_endpoints.py::test_get_stream_done_event_present PASSED       [ 41%]
+tests/test_endpoints.py::test_get_stream_with_language_hint PASSED       [ 41%]
+tests/test_endpoints.py::test_get_stream_empty_code_rejected PASSED      [ 42%]
+tests/test_endpoints.py::test_suggestions_missing_code PASSED            [ 42%]
+tests/test_endpoints.py::test_suggestions_empty_code PASSED              [ 42%]
+tests/test_endpoints.py::test_suggestions_too_long PASSED                [ 42%]
+tests/test_endpoints.py::test_suggestions_get_not_allowed PASSED         [ 42%]
+tests/test_endpoints.py::test_suggestions_response_structure PASSED      [ 42%]
+tests/test_endpoints.py::test_suggestions_item_structure PASSED          [ 42%]
+tests/test_endpoints.py::test_suggestions_response_types PASSED          [ 42%]
+tests/test_endpoints.py::test_suggestions_score_grade_consistency PASSED [ 43%]
+tests/test_endpoints.py::test_suggestions_auto_detects_python PASSED     [ 43%]
+tests/test_error_tracking.py::test_validate_dsn_returns_none_for_none PASSED [ 43%]
+tests/test_error_tracking.py::test_validate_dsn_returns_none_for_empty_string PASSED [ 43%]
+tests/test_error_tracking.py::test_validate_dsn_returns_none_for_whitespace_only PASSED [ 43%]
+tests/test_error_tracking.py::test_validate_dsn_returns_none_for_placeholder_value PASSED [ 43%]
+tests/test_error_tracking.py::test_validate_dsn_returns_none_for_unrecognised_scheme PASSED [ 43%]
+tests/test_error_tracking.py::test_validate_dsn_accepts_https_dsn PASSED [ 43%]
+tests/test_error_tracking.py::test_validate_dsn_accepts_http_dsn PASSED  [ 44%]
+tests/test_error_tracking.py::test_validate_dsn_strips_whitespace PASSED [ 44%]
+tests/test_error_tracking.py::test_clamp_sample_rate_returns_value_in_range PASSED [ 44%]
+tests/test_error_tracking.py::test_clamp_sample_rate_accepts_zero PASSED [ 44%]
+tests/test_error_tracking.py::test_clamp_sample_rate_accepts_one PASSED  [ 44%]
+tests/test_error_tracking.py::test_clamp_sample_rate_clamps_negative_to_zero PASSED [ 44%]
+tests/test_error_tracking.py::test_clamp_sample_rate_clamps_above_one_to_one PASSED [ 44%]
+tests/test_error_tracking.py::test_clamp_sample_rate_clamps_large_value_to_one PASSED [ 44%]
+tests/test_error_tracking.py::test_init_error_tracking_returns_false_when_dsn_is_none PASSED [ 45%]
+tests/test_error_tracking.py::test_init_error_tracking_returns_false_when_dsn_is_empty PASSED [ 45%]
+tests/test_error_tracking.py::test_init_error_tracking_returns_false_when_dsn_is_placeholder PASSED [ 45%]
+tests/test_error_tracking.py::test_init_error_tracking_returns_false_when_sentry_sdk_missing PASSED [ 45%]
+tests/test_error_tracking.py::test_init_error_tracking_returns_false_when_sentry_init_raises PASSED [ 45%]
+tests/test_file_upload.py::test_upload_allowed_files[test.py-print('hello')-text/x-python] PASSED [ 45%]
+tests/test_file_upload.py::test_upload_allowed_files[test.js-console.log('hello')-application/javascript] PASSED [ 45%]
+tests/test_file_upload.py::test_upload_allowed_files[test.ts-const x: number = 10;-application/typescript] PASSED [ 45%]
+tests/test_file_upload.py::test_upload_allowed_files[test.java-class Main {}-text/x-java-source] PASSED [ 46%]
+tests/test_file_upload.py::test_upload_allowed_files[test.cpp-#include <iostream>-text/x-c++src] PASSED [ 46%]
+tests/test_file_upload.py::test_upload_allowed_files[test.txt-hello world-text/plain] PASSED [ 46%]
+tests/test_file_upload.py::test_upload_blocked_files[virus.exe-malware] PASSED [ 46%]
+tests/test_file_upload.py::test_upload_blocked_files[script.bat-echo hacked] PASSED [ 46%]
+tests/test_file_upload.py::test_upload_blocked_files[shell.sh-rm -rf /] PASSED [ 46%]
+tests/test_file_upload.py::test_upload_blocked_files[powershell.ps1-Write-Host hacked] PASSED [ 46%]
+tests/test_file_upload.py::test_upload_blocked_files[payload.dll-binarydata] PASSED [ 46%]
+tests/test_file_upload.py::test_upload_blocked_files[installer.msi-installer] PASSED [ 47%]
+tests/test_file_upload.py::test_invalid_mime_type PASSED                 [ 47%]
+tests/test_file_upload.py::test_double_extension PASSED                  [ 47%]
+tests/test_file_upload.py::test_no_file_uploaded PASSED                  [ 47%]
+tests/test_file_upload.py::test_large_file PASSED                        [ 47%]
+tests/test_file_upload.py::test_upload_info PASSED                       [ 47%]
+tests/test_file_upload.py::test_successful_upload_response PASSED        [ 47%]
+tests/test_file_upload.py::test_max_file_size_allowed PASSED             [ 47%]
+tests/test_frontend_quiet_startup_ping.py::test_ping_api_defaults_to_quiet_mode PASSED [ 48%]
+tests/test_frontend_quiet_startup_ping.py::test_manual_ping_button_enables_notifications PASSED [ 48%]
+tests/test_frontend_quiet_startup_ping.py::test_success_toast_only_fires_for_manual_ping PASSED [ 48%]
+tests/test_frontend_quiet_startup_ping.py::test_unreachable_toast_only_fires_for_manual_ping PASSED [ 48%]
+tests/test_frontend_saved_entry_restore.py::test_saved_entry_ids_are_normalized_before_lookup PASSED [ 48%]
+tests/test_frontend_saved_entry_restore.py::test_history_and_favorites_share_the_same_restore_helper PASSED [ 48%]
+tests/test_frontend_saved_entry_restore.py::test_restore_helper_rehydrates_language_and_results PASSED [ 48%]
+tests/test_health_input_validation.py::test_sanitize_db_error_keeps_type_and_first_line PASSED [ 48%]
+tests/test_health_input_validation.py::test_sanitize_db_error_drops_lines_after_the_first PASSED [ 49%]
+tests/test_health_input_validation.py::test_sanitize_db_error_handles_empty_message PASSED [ 49%]
+tests/test_health_input_validation.py::test_sanitize_db_error_caps_length PASSED [ 49%]
+tests/test_health_input_validation.py::test_sanitize_db_error_does_not_leak_full_dsn_credentials PASSED [ 49%]
+tests/test_health_input_validation.py::test_readiness_error_payload_is_sanitized PASSED [ 49%]
+tests/test_health_metrics.py::test_liveness_returns_ok PASSED            [ 49%]
+tests/test_health_metrics.py::test_readiness_returns_ok_when_db_reachable PASSED [ 49%]
+tests/test_health_metrics.py::test_readiness_returns_503_when_db_check_fails PASSED [ 50%]
+tests/test_health_metrics.py::test_metrics_endpoint_returns_prometheus_format PASSED [ 50%]
+tests/test_health_metrics.py::test_metrics_uses_route_template_not_raw_path PASSED [ 50%]
+tests/test_health_metrics.py::test_metrics_endpoint_excludes_itself PASSED [ 50%]
+tests/test_health_metrics.py::test_metrics_requires_token_when_configured PASSED [ 50%]
+tests/test_health_metrics.py::test_metrics_endpoint_404_when_disabled PASSED [ 50%]
+tests/test_history.py::test_save_history PASSED                          [ 50%]
+tests/test_history.py::test_get_history PASSED                           [ 50%]
+tests/test_history.py::test_get_history_pagination PASSED                [ 51%]
+tests/test_history.py::test_get_history_sorting PASSED                   [ 51%]
+tests/test_history.py::test_search_history PASSED                        [ 51%]
+tests/test_history.py::test_delete_history PASSED                        [ 51%]
+tests/test_history.py::test_delete_nonexistent PASSED                    [ 51%]
+tests/test_history.py::test_history_entry_fields PASSED                  [ 51%]
+tests/test_history.py::test_search_no_results PASSED                     [ 51%]
+tests/test_history.py::test_search_history_max_length PASSED             [ 51%]
+tests/test_history.py::test_history_detail PASSED                        [ 52%]
+tests/test_history.py::test_history_detail_not_found PASSED              [ 52%]
+tests/test_history.py::test_clear_all_history PASSED                     [ 52%]
+tests/test_hybrid_analysis.py::test_hybrid_analysis_llm_disabled_returns_rule_based_mode PASSED [ 52%]
+tests/test_hybrid_analysis.py::test_hybrid_analysis_llm_success_returns_hybrid_mode PASSED [ 52%]
+tests/test_hybrid_analysis.py::test_hybrid_analysis_llm_failure_degrades PASSED [ 52%]
+tests/test_hybrid_analysis.py::test_hybrid_analysis_unexpected_exception_degrades PASSED [ 52%]
+tests/test_hybrid_analysis.py::test_analyze_endpoint_llm_disabled_is_rule_based PASSED [ 52%]
+tests/test_hybrid_analysis.py::test_analyze_endpoint_llm_success_is_hybrid PASSED [ 53%]
+tests/test_hybrid_analysis.py::test_analyze_endpoint_llm_failure_degrades_http_200 PASSED [ 53%]
+tests/test_hybrid_analysis.py::test_analyze_endpoint_cache_key_separates_modes PASSED [ 53%]
+tests/test_js_ts_bug_patterns.py::test_window_location_equality_not_flagged PASSED [ 53%]
+tests/test_js_ts_bug_patterns.py::test_window_location_strict_equality_not_flagged PASSED [ 53%]
+tests/test_js_ts_bug_patterns.py::test_window_location_assignment_flagged PASSED [ 53%]
+tests/test_js_ts_bug_patterns.py::test_proto_read_not_flagged PASSED     [ 53%]
+tests/test_js_ts_bug_patterns.py::test_proto_bracket_assignment_flagged PASSED [ 53%]
+tests/test_js_ts_bug_patterns.py::test_proto_dot_assignment_flagged PASSED [ 54%]
+tests/test_js_ts_bug_patterns.py::test_await_in_try_catch_not_flagged PASSED [ 54%]
+tests/test_js_ts_bug_patterns.py::test_await_in_try_finally_still_flagged PASSED [ 54%]
+tests/test_js_ts_bug_patterns.py::test_await_without_try_catch_flagged PASSED [ 54%]
+tests/test_llm_analysis.py::TestEnabled::test_true_when_enabled_and_key_present PASSED [ 54%]
+tests/test_llm_analysis.py::TestEnabled::test_false_when_llm_disabled PASSED [ 54%]
+tests/test_llm_analysis.py::TestEnabled::test_false_when_api_key_empty PASSED [ 54%]
+tests/test_llm_analysis.py::TestEnabled::test_false_when_api_key_none PASSED [ 54%]
+tests/test_llm_analysis.py::TestChatCompletion::test_raises_when_disabled PASSED [ 55%]
+tests/test_llm_analysis.py::TestChatCompletion::test_returns_stripped_content PASSED [ 55%]
+tests/test_llm_analysis.py::TestChatCompletion::test_raises_on_empty_content PASSED [ 55%]
+tests/test_llm_analysis.py::TestChatCompletion::test_raises_on_http_error PASSED [ 55%]
+tests/test_llm_analysis.py::TestChatCompletion::test_raises_on_timeout PASSED [ 55%]
+tests/test_llm_analysis.py::TestChatCompletion::test_raises_on_connect_error PASSED [ 55%]
+tests/test_llm_analysis.py::TestChatCompletion::test_sends_correct_payload_and_auth PASSED [ 55%]
+tests/test_llm_analysis.py::TestExtractJson::test_plain_json_object PASSED [ 55%]
+tests/test_llm_analysis.py::TestExtractJson::test_fenced_json_response PASSED [ 56%]
+tests/test_llm_analysis.py::TestExtractJson::test_json_with_surrounding_text PASSED [ 56%]
+tests/test_llm_analysis.py::TestExtractJson::test_no_braces_raises_invalid_json_payload PASSED [ 56%]
+tests/test_llm_analysis.py::TestExtractJson::test_empty_braces_order_raises PASSED [ 56%]
+tests/test_llm_analysis.py::TestExtractJson::test_invalid_json_between_braces_raises_llm_error PASSED [ 56%]
+tests/test_llm_analysis.py::TestExtractJson::test_non_object_json_raises PASSED [ 56%]
+tests/test_llm_analysis.py::TestExtractJson::test_missing_structured_keys_raises_schema_error PASSED [ 56%]
+tests/test_llm_analysis.py::TestExtractJson::test_valid_structured_keys_pass PASSED [ 56%]
+tests/test_llm_analysis.py::TestExtractJson::test_fenced_structured_payload PASSED [ 57%]
+tests/test_llm_analysis.py::TestSummarizeCode::test_raises_when_disabled PASSED [ 57%]
+tests/test_llm_analysis.py::TestSummarizeCode::test_success_returns_text PASSED [ 57%]
+tests/test_llm_analysis.py::TestSummarizeCode::test_request_includes_user_code_tags PASSED [ 57%]
+tests/test_llm_analysis.py::TestSummarizeCode::test_http_failure_raises PASSED [ 57%]
+tests/test_llm_analysis.py::TestAnalyzeCodeStructured::test_raises_when_disabled PASSED [ 57%]
+tests/test_llm_analysis.py::TestAnalyzeCodeStructured::test_parses_valid_json PASSED [ 57%]
+tests/test_llm_analysis.py::TestAnalyzeCodeStructured::test_parses_fenced_json PASSED [ 57%]
+tests/test_llm_analysis.py::TestAnalyzeCodeStructured::test_invalid_payload_raises PASSED [ 58%]
+tests/test_llm_analysis.py::TestAnalyzeCodeStructured::test_retries_then_succeeds_on_second_attempt PASSED [ 58%]
+tests/test_llm_analysis.py::TestAnalyzeCodeStructured::test_exhausts_retries_on_persistent_invalid_json PASSED [ 58%]
+tests/test_llm_analysis.py::TestAnalyzeCodeStructured::test_exhausts_retries_on_missing_schema_keys PASSED [ 58%]
+tests/test_llm_analysis.py::TestAnalyzeCodeStructured::test_request_includes_user_code_tags PASSED [ 58%]
+tests/test_llm_analysis.py::TestChatReply::test_success_returns_reply PASSED [ 58%]
+tests/test_llm_analysis.py::TestChatReply::test_payload_includes_xml_tags PASSED [ 58%]
+tests/test_llm_analysis.py::TestChatReply::test_history_truncates_to_last_eight PASSED [ 58%]
+tests/test_llm_analysis.py::TestChatReply::test_none_code_becomes_empty_string PASSED [ 59%]
+tests/test_logging_config.py::test_normalise_level_accepts_valid_levels PASSED [ 59%]
+tests/test_logging_config.py::test_normalise_level_falls_back_on_invalid_value PASSED [ 59%]
+tests/test_logging_config.py::test_collect_component_overrides_reads_env_vars PASSED [ 59%]
+tests/test_logging_config.py::test_collect_component_overrides_ignores_unset_components PASSED [ 59%]
+tests/test_logging_config.py::test_collect_component_overrides_falls_back_on_invalid_value PASSED [ 59%]
+tests/test_logging_config.py::test_get_effective_levels_returns_every_known_component PASSED [ 59%]
+tests/test_logging_config.py::test_get_effective_levels_reflects_override PASSED [ 59%]
+tests/test_logging_config.py::test_configure_logging_applies_global_default PASSED [ 60%]
+tests/test_logging_config.py::test_configure_logging_applies_component_override PASSED [ 60%]
+tests/test_logging_config.py::test_configure_logging_is_safe_to_call_multiple_times PASSED [ 60%]
+tests/test_logging_config.py::test_configure_logging_respects_json_flag[True] PASSED [ 60%]
+tests/test_logging_config.py::test_configure_logging_respects_json_flag[False] PASSED [ 60%]
+tests/test_multiline_bug_patterns.py::test_string_concatenation_in_loop_detected PASSED [ 60%]
+tests/test_multiline_bug_patterns.py::test_string_concatenation_finds_every_occurrence PASSED [ 60%]
+tests/test_multiline_bug_patterns.py::test_missing_init_detected PASSED  [ 60%]
+tests/test_multiline_bug_patterns.py::test_missing_init_not_flagged_when_init_present PASSED [ 61%]
+tests/test_multiline_bug_patterns.py::test_callback_hell_detected PASSED [ 61%]
+tests/test_multiline_bug_patterns.py::test_debugging_endpoint_detects_multiline_patterns[def build(items):\n    r = ""\n    for x in items:\n        r += "x"\n    return r\n-python-String Concatenation in Loop] PASSED [ 61%]
+tests/test_multiline_bug_patterns.py::test_debugging_endpoint_detects_multiline_patterns[class Calculator:\n    def add(self, a, b):\n        return a + b\n-python-Missing __init__] PASSED [ 61%]
+tests/test_multiline_bug_patterns.py::test_debugging_endpoint_detects_multiline_patterns[code2-javascript-Callback Hell] PASSED [ 61%]
+tests/test_ping.py::test_ping PASSED                                     [ 61%]
+tests/test_python_ast_analyzer.py::test_detects_missing_bracket_syntax_error PASSED [ 61%]
+tests/test_python_ast_analyzer.py::test_detects_invalid_indentation_syntax_error PASSED [ 61%]
+tests/test_python_ast_analyzer.py::test_detects_division_by_zero_expression PASSED [ 62%]
+tests/test_python_ast_analyzer.py::test_detects_division_by_zero_inside_function_call PASSED [ 62%]
+tests/test_python_ast_analyzer.py::test_detects_out_of_range_list_index PASSED [ 62%]
+tests/test_python_ast_analyzer.py::test_detects_out_of_range_string_index PASSED [ 62%]
+tests/test_python_ast_analyzer.py::test_detects_string_integer_concatenation PASSED [ 62%]
+tests/test_request_id_logging.py::test_request_id_matches_state_header_and_logs[200] PASSED [ 62%]
+tests/test_request_id_logging.py::test_request_id_matches_state_header_and_logs[422] PASSED [ 62%]
+tests/test_request_id_logging.py::test_overlapping_requests_keep_distinct_correlated_ids PASSED [ 63%]
+tests/test_sanitization.py::test_sanitize_strips_null_bytes PASSED       [ 63%]
+tests/test_sanitization.py::test_sanitize_strips_ansi_escapes PASSED     [ 63%]
+tests/test_sanitization.py::test_sanitize_preserves_normal_code PASSED   [ 63%]
+tests/test_sanitization.py::test_sanitize_preserves_html_angle_brackets PASSED [ 63%]
+tests/test_sanitization.py::test_sanitize_text_strips_control_chars PASSED [ 63%]
+tests/test_sanitization.py::test_sanitize_text_preserves_normal_text PASSED [ 63%]
+tests/test_sanitization.py::test_sanitize_language_hint_strips_control_chars PASSED [ 63%]
+tests/test_sanitization.py::test_sanitize_result_json_valid PASSED       [ 64%]
+tests/test_sanitization.py::test_sanitize_result_json_rejects_invalid PASSED [ 64%]
+tests/test_sanitization.py::test_sanitize_result_json_strips_null_bytes PASSED [ 64%]
+tests/test_sanitization.py::test_xss_in_explanation_endpoint PASSED      [ 64%]
+tests/test_sanitization.py::test_xss_in_debugging_endpoint PASSED        [ 64%]
+tests/test_sanitization.py::test_xss_in_suggestions_endpoint PASSED      [ 64%]
+tests/test_sanitization.py::test_xss_in_analyze_endpoint PASSED          [ 64%]
+tests/test_sanitization.py::test_xss_with_null_bytes_sanitized PASSED    [ 64%]
+tests/test_sanitization.py::test_ansi_payload_sanitized PASSED           [ 65%]
+tests/test_sanitization.py::test_empty_code_rejected PASSED              [ 65%]
+tests/test_sanitization.py::test_code_exceeding_max_length_rejected PASSED [ 65%]
+tests/test_sanitization.py::test_normal_python_code_unaffected PASSED    [ 65%]
+tests/test_sanitization.py::test_normal_javascript_code_unaffected PASSED [ 65%]
+tests/test_sanitization.py::test_html_angle_brackets_in_code_preserved PASSED [ 65%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[<script>alert('xss')</script>] PASSED [ 65%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[<script>alert(String.fromCharCode(88,83,83))</script>] PASSED [ 65%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[<img src=x onerror="alert(1)">] PASSED [ 66%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[<img src=x onerror=alert('xss')>] PASSED [ 66%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[<svg/onload=alert(1)>] PASSED [ 66%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[<svg><script>alert(1)</script></svg>] PASSED [ 66%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[<body onload=alert('xss')>] PASSED [ 66%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[<iframe src="javascript:alert('xss')"></iframe>] PASSED [ 66%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[${alert(1)}] PASSED [ 66%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[{{constructor.constructor('alert(1)')()}}] PASSED [ 66%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[#{7*7}] PASSED [ 67%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[<%= 7*7 %>] PASSED [ 67%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[${{7*7}}] PASSED [ 67%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[priority-high" onmouseover="alert(1)] PASSED [ 67%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[&lt;script&gt;alert('xss')&lt;/script&gt;] PASSED [ 67%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[&#60;script&#62;alert(1)&#60;/script&#62;] PASSED [ 67%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[%3Cscript%3Ealert(1)%3C/script%3E] PASSED [ 67%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[<scr\x00ipt>alert('xss')</scr\x00ipt>] PASSED [ 67%]
+tests/test_sanitization_payloads.py::test_sanitize_code_input_strips_null_and_ansi[\x1b[31m<script>alert(1)</script>\x1b[0m] PASSED [ 68%]
+tests/test_sanitization_payloads.py::test_sanitize_code_preserves_angle_brackets_not_html_escaping[<script>alert('xss')</script>] PASSED [ 68%]
+tests/test_sanitization_payloads.py::test_sanitize_code_preserves_angle_brackets_not_html_escaping[<script>alert(String.fromCharCode(88,83,83))</script>] PASSED [ 68%]
+tests/test_sanitization_payloads.py::test_sanitize_code_preserves_angle_brackets_not_html_escaping[<img src=x onerror="alert(1)">] PASSED [ 68%]
+tests/test_sanitization_payloads.py::test_sanitize_code_preserves_angle_brackets_not_html_escaping[<img src=x onerror=alert('xss')>] PASSED [ 68%]
+tests/test_sanitization_payloads.py::test_sanitize_code_preserves_angle_brackets_not_html_escaping[<svg/onload=alert(1)>] PASSED [ 68%]
+tests/test_sanitization_payloads.py::test_sanitize_code_preserves_angle_brackets_not_html_escaping[<svg><script>alert(1)</script></svg>] PASSED [ 68%]
+tests/test_sanitization_payloads.py::test_sanitize_code_preserves_angle_brackets_not_html_escaping[<body onload=alert('xss')>] PASSED [ 68%]
+tests/test_sanitization_payloads.py::test_sanitize_code_preserves_angle_brackets_not_html_escaping[<iframe src="javascript:alert('xss')"></iframe>] PASSED [ 69%]
+tests/test_sanitization_payloads.py::test_sanitize_text_input_strips_control_chars[${alert(1)}] PASSED [ 69%]
+tests/test_sanitization_payloads.py::test_sanitize_text_input_strips_control_chars[{{constructor.constructor('alert(1)')()}}] PASSED [ 69%]
+tests/test_sanitization_payloads.py::test_sanitize_text_input_strips_control_chars[#{7*7}] PASSED [ 69%]
+tests/test_sanitization_payloads.py::test_sanitize_text_input_strips_control_chars[<%= 7*7 %>] PASSED [ 69%]
+tests/test_sanitization_payloads.py::test_sanitize_text_input_strips_control_chars[${{7*7}}] PASSED [ 69%]
+tests/test_sanitization_payloads.py::test_sanitize_text_input_strips_control_chars[priority-high" onmouseover="alert(1)] PASSED [ 69%]
+tests/test_sanitization_payloads.py::test_sanitize_result_json_accepts_json_with_xss_strings[<script>alert('xss')</script>] PASSED [ 69%]
+tests/test_sanitization_payloads.py::test_sanitize_result_json_accepts_json_with_xss_strings[<script>alert(String.fromCharCode(88,83,83))</script>] PASSED [ 70%]
+tests/test_sanitization_payloads.py::test_sanitize_result_json_accepts_json_with_xss_strings[<img src=x onerror="alert(1)">] PASSED [ 70%]
+tests/test_sanitization_payloads.py::test_sanitize_result_json_accepts_json_with_xss_strings[<img src=x onerror=alert('xss')>] PASSED [ 70%]
+tests/test_sanitization_payloads.py::test_sanitize_result_json_accepts_json_with_xss_strings[<svg/onload=alert(1)>] PASSED [ 70%]
+tests/test_sanitization_payloads.py::test_sanitize_result_json_accepts_json_with_xss_strings[<svg><script>alert(1)</script></svg>] PASSED [ 70%]
+tests/test_sanitization_payloads.py::test_sanitize_result_json_accepts_json_with_xss_strings[<body onload=alert('xss')>] PASSED [ 70%]
+tests/test_sanitization_payloads.py::test_sanitize_result_json_accepts_json_with_xss_strings[<iframe src="javascript:alert('xss')"></iframe>] PASSED [ 70%]
+tests/test_sanitization_payloads.py::test_sanitize_result_json_accepts_json_with_xss_strings[${alert(1)}] PASSED [ 70%]
+tests/test_sanitization_payloads.py::test_sanitize_result_json_accepts_json_with_xss_strings[{{constructor.constructor('alert(1)')()}}] PASSED [ 71%]
+tests/test_sanitization_payloads.py::test_sanitize_result_json_accepts_json_with_xss_strings[#{7*7}] PASSED [ 71%]
+tests/test_sanitization_payloads.py::test_sanitize_result_json_accepts_json_with_xss_strings[<%= 7*7 %>] PASSED [ 71%]
+tests/test_sanitization_payloads.py::test_sanitize_result_json_accepts_json_with_xss_strings[${{7*7}}] PASSED [ 71%]
+tests/test_sanitization_payloads.py::test_sanitize_result_json_accepts_json_with_xss_strings[priority-high" onmouseover="alert(1)] PASSED [ 71%]
+tests/test_sanitization_payloads.py::test_history_create_request_sanitizes_code[<script>alert('xss')</script>] PASSED [ 71%]
+tests/test_sanitization_payloads.py::test_history_create_request_sanitizes_code[<script>alert(String.fromCharCode(88,83,83))</script>] PASSED [ 71%]
+tests/test_sanitization_payloads.py::test_history_create_request_sanitizes_code[<img src=x onerror="alert(1)">] PASSED [ 71%]
+tests/test_sanitization_payloads.py::test_history_create_request_sanitizes_code[<img src=x onerror=alert('xss')>] PASSED [ 72%]
+tests/test_sanitization_payloads.py::test_history_create_request_sanitizes_code[<svg/onload=alert(1)>] PASSED [ 72%]
+tests/test_sanitization_payloads.py::test_history_create_request_sanitizes_code[<svg><script>alert(1)</script></svg>] PASSED [ 72%]
+tests/test_sanitization_payloads.py::test_history_create_request_sanitizes_code[<body onload=alert('xss')>] PASSED [ 72%]
+tests/test_sanitization_payloads.py::test_history_create_request_sanitizes_code[<iframe src="javascript:alert('xss')"></iframe>] PASSED [ 72%]
+tests/test_sanitization_payloads.py::test_history_create_request_validates_result_json[<script>alert('xss')</script>] PASSED [ 72%]
+tests/test_sanitization_payloads.py::test_history_create_request_validates_result_json[<script>alert(String.fromCharCode(88,83,83))</script>] PASSED [ 72%]
+tests/test_sanitization_payloads.py::test_history_create_request_validates_result_json[<img src=x onerror="alert(1)">] PASSED [ 72%]
+tests/test_sanitization_payloads.py::test_history_create_request_validates_result_json[<img src=x onerror=alert('xss')>] PASSED [ 73%]
+tests/test_sanitization_payloads.py::test_history_create_request_validates_result_json[<svg/onload=alert(1)>] PASSED [ 73%]
+tests/test_sanitization_payloads.py::test_history_create_request_validates_result_json[<svg><script>alert(1)</script></svg>] PASSED [ 73%]
+tests/test_sanitization_payloads.py::test_history_create_request_validates_result_json[<body onload=alert('xss')>] PASSED [ 73%]
+tests/test_sanitization_payloads.py::test_history_create_request_validates_result_json[<iframe src="javascript:alert('xss')"></iframe>] PASSED [ 73%]
+tests/test_sanitization_payloads.py::test_history_create_request_validates_result_json[${alert(1)}] PASSED [ 73%]
+tests/test_sanitization_payloads.py::test_history_create_request_validates_result_json[{{constructor.constructor('alert(1)')()}}] PASSED [ 73%]
+tests/test_sanitization_payloads.py::test_history_create_request_validates_result_json[#{7*7}] PASSED [ 73%]
+tests/test_sanitization_payloads.py::test_history_create_request_validates_result_json[<%= 7*7 %>] PASSED [ 74%]
+tests/test_sanitization_payloads.py::test_history_create_request_validates_result_json[${{7*7}}] PASSED [ 74%]
+tests/test_sanitization_payloads.py::test_history_create_request_validates_result_json[priority-high" onmouseover="alert(1)] PASSED [ 74%]
+tests/test_sanitization_payloads.py::test_history_create_request_rejects_invalid_result_json PASSED [ 74%]
+tests/test_sanitization_payloads.py::test_share_create_request_sanitizes_stored_fields[<script>alert('xss')</script>] PASSED [ 74%]
+tests/test_sanitization_payloads.py::test_share_create_request_sanitizes_stored_fields[<script>alert(String.fromCharCode(88,83,83))</script>] PASSED [ 74%]
+tests/test_sanitization_payloads.py::test_share_create_request_sanitizes_stored_fields[<img src=x onerror="alert(1)">] PASSED [ 74%]
+tests/test_sanitization_payloads.py::test_share_create_request_sanitizes_stored_fields[<img src=x onerror=alert('xss')>] PASSED [ 75%]
+tests/test_sanitization_payloads.py::test_share_create_request_sanitizes_stored_fields[<svg/onload=alert(1)>] PASSED [ 75%]
+tests/test_sanitization_payloads.py::test_share_create_request_sanitizes_stored_fields[<svg><script>alert(1)</script></svg>] PASSED [ 75%]
+tests/test_sanitization_payloads.py::test_share_create_request_sanitizes_stored_fields[<body onload=alert('xss')>] PASSED [ 75%]
+tests/test_sanitization_payloads.py::test_share_create_request_sanitizes_stored_fields[<iframe src="javascript:alert('xss')"></iframe>] PASSED [ 75%]
+tests/test_sanitization_payloads.py::test_favorite_create_request_sanitizes_title_and_code[<script>alert('xss')</script>] PASSED [ 75%]
+tests/test_sanitization_payloads.py::test_favorite_create_request_sanitizes_title_and_code[<script>alert(String.fromCharCode(88,83,83))</script>] PASSED [ 75%]
+tests/test_sanitization_payloads.py::test_favorite_create_request_sanitizes_title_and_code[<img src=x onerror="alert(1)">] PASSED [ 75%]
+tests/test_sanitization_payloads.py::test_favorite_create_request_sanitizes_title_and_code[<img src=x onerror=alert('xss')>] PASSED [ 76%]
+tests/test_sanitization_payloads.py::test_favorite_create_request_sanitizes_title_and_code[<svg/onload=alert(1)>] PASSED [ 76%]
+tests/test_sanitization_payloads.py::test_favorite_create_request_sanitizes_title_and_code[<svg><script>alert(1)</script></svg>] PASSED [ 76%]
+tests/test_sanitization_payloads.py::test_favorite_create_request_sanitizes_title_and_code[<body onload=alert('xss')>] PASSED [ 76%]
+tests/test_sanitization_payloads.py::test_favorite_create_request_sanitizes_title_and_code[<iframe src="javascript:alert('xss')"></iframe>] PASSED [ 76%]
+tests/test_sanitization_payloads.py::test_chat_request_sanitizes_message_and_history[<script>alert('xss')</script>] PASSED [ 76%]
+tests/test_sanitization_payloads.py::test_chat_request_sanitizes_message_and_history[<script>alert(String.fromCharCode(88,83,83))</script>] PASSED [ 76%]
+tests/test_sanitization_payloads.py::test_chat_request_sanitizes_message_and_history[<img src=x onerror="alert(1)">] PASSED [ 76%]
+tests/test_sanitization_payloads.py::test_chat_request_sanitizes_message_and_history[<img src=x onerror=alert('xss')>] PASSED [ 77%]
+tests/test_sanitization_payloads.py::test_chat_request_sanitizes_message_and_history[<svg/onload=alert(1)>] PASSED [ 77%]
+tests/test_sanitization_payloads.py::test_chat_request_sanitizes_message_and_history[<svg><script>alert(1)</script></svg>] PASSED [ 77%]
+tests/test_sanitization_payloads.py::test_chat_request_sanitizes_message_and_history[<body onload=alert('xss')>] PASSED [ 77%]
+tests/test_sanitization_payloads.py::test_chat_request_sanitizes_message_and_history[<iframe src="javascript:alert('xss')"></iframe>] PASSED [ 77%]
+tests/test_sanitization_payloads.py::test_chat_request_sanitizes_message_and_history[${alert(1)}] PASSED [ 77%]
+tests/test_sanitization_payloads.py::test_chat_request_sanitizes_message_and_history[{{constructor.constructor('alert(1)')()}}] PASSED [ 77%]
+tests/test_sanitization_payloads.py::test_chat_request_sanitizes_message_and_history[#{7*7}] PASSED [ 77%]
+tests/test_sanitization_payloads.py::test_chat_request_sanitizes_message_and_history[<%= 7*7 %>] PASSED [ 78%]
+tests/test_sanitization_payloads.py::test_chat_request_sanitizes_message_and_history[${{7*7}}] PASSED [ 78%]
+tests/test_sanitization_payloads.py::test_chat_request_sanitizes_message_and_history[priority-high" onmouseover="alert(1)] PASSED [ 78%]
+tests/test_sanitization_payloads.py::test_chat_message_request_sanitizes_level PASSED [ 78%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<script>alert('xss')</script>-/explanation/] PASSED [ 78%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<script>alert('xss')</script>-/debugging/] PASSED [ 78%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<script>alert('xss')</script>-/suggestions/] PASSED [ 78%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<script>alert('xss')</script>-/analyze/] PASSED [ 78%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<script>alert(String.fromCharCode(88,83,83))</script>-/explanation/] PASSED [ 79%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<script>alert(String.fromCharCode(88,83,83))</script>-/debugging/] PASSED [ 79%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<script>alert(String.fromCharCode(88,83,83))</script>-/suggestions/] PASSED [ 79%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<script>alert(String.fromCharCode(88,83,83))</script>-/analyze/] PASSED [ 79%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<img src=x onerror="alert(1)">-/explanation/] PASSED [ 79%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<img src=x onerror="alert(1)">-/debugging/] PASSED [ 79%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<img src=x onerror="alert(1)">-/suggestions/] PASSED [ 79%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<img src=x onerror="alert(1)">-/analyze/] PASSED [ 79%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<img src=x onerror=alert('xss')>-/explanation/] PASSED [ 80%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<img src=x onerror=alert('xss')>-/debugging/] PASSED [ 80%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<img src=x onerror=alert('xss')>-/suggestions/] PASSED [ 80%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<img src=x onerror=alert('xss')>-/analyze/] PASSED [ 80%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<svg/onload=alert(1)>-/explanation/] PASSED [ 80%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<svg/onload=alert(1)>-/debugging/] PASSED [ 80%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<svg/onload=alert(1)>-/suggestions/] PASSED [ 80%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<svg/onload=alert(1)>-/analyze/] PASSED [ 80%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<svg><script>alert(1)</script></svg>-/explanation/] PASSED [ 81%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<svg><script>alert(1)</script></svg>-/debugging/] PASSED [ 81%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<svg><script>alert(1)</script></svg>-/suggestions/] PASSED [ 81%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<svg><script>alert(1)</script></svg>-/analyze/] PASSED [ 81%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<body onload=alert('xss')>-/explanation/] PASSED [ 81%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<body onload=alert('xss')>-/debugging/] PASSED [ 81%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<body onload=alert('xss')>-/suggestions/] PASSED [ 81%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<body onload=alert('xss')>-/analyze/] PASSED [ 81%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<iframe src="javascript:alert('xss')"></iframe>-/explanation/] PASSED [ 82%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<iframe src="javascript:alert('xss')"></iframe>-/debugging/] PASSED [ 82%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<iframe src="javascript:alert('xss')"></iframe>-/suggestions/] PASSED [ 82%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<iframe src="javascript:alert('xss')"></iframe>-/analyze/] PASSED [ 82%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[${alert(1)}-/explanation/] PASSED [ 82%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[${alert(1)}-/debugging/] PASSED [ 82%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[${alert(1)}-/suggestions/] PASSED [ 82%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[${alert(1)}-/analyze/] PASSED [ 82%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[{{constructor.constructor('alert(1)')()}}-/explanation/] PASSED [ 83%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[{{constructor.constructor('alert(1)')()}}-/debugging/] PASSED [ 83%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[{{constructor.constructor('alert(1)')()}}-/suggestions/] PASSED [ 83%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[{{constructor.constructor('alert(1)')()}}-/analyze/] PASSED [ 83%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[#{7*7}-/explanation/] PASSED [ 83%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[#{7*7}-/debugging/] PASSED [ 83%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[#{7*7}-/suggestions/] PASSED [ 83%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[#{7*7}-/analyze/] PASSED [ 83%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<%= 7*7 %>-/explanation/] PASSED [ 84%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<%= 7*7 %>-/debugging/] PASSED [ 84%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<%= 7*7 %>-/suggestions/] PASSED [ 84%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[<%= 7*7 %>-/analyze/] PASSED [ 84%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[${{7*7}}-/explanation/] PASSED [ 84%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[${{7*7}}-/debugging/] PASSED [ 84%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[${{7*7}}-/suggestions/] PASSED [ 84%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[${{7*7}}-/analyze/] PASSED [ 84%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[priority-high" onmouseover="alert(1)-/explanation/] PASSED [ 85%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[priority-high" onmouseover="alert(1)-/debugging/] PASSED [ 85%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[priority-high" onmouseover="alert(1)-/suggestions/] PASSED [ 85%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_neutralize_xss_payloads[priority-high" onmouseover="alert(1)-/analyze/] PASSED [ 85%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[&lt;script&gt;alert('xss')&lt;/script&gt;-/explanation/] PASSED [ 85%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[&lt;script&gt;alert('xss')&lt;/script&gt;-/debugging/] PASSED [ 85%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[&lt;script&gt;alert('xss')&lt;/script&gt;-/suggestions/] PASSED [ 85%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[&lt;script&gt;alert('xss')&lt;/script&gt;-/analyze/] PASSED [ 85%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[&#60;script&#62;alert(1)&#60;/script&#62;-/explanation/] PASSED [ 86%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[&#60;script&#62;alert(1)&#60;/script&#62;-/debugging/] PASSED [ 86%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[&#60;script&#62;alert(1)&#60;/script&#62;-/suggestions/] PASSED [ 86%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[&#60;script&#62;alert(1)&#60;/script&#62;-/analyze/] PASSED [ 86%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[%3Cscript%3Ealert(1)%3C/script%3E-/explanation/] PASSED [ 86%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[%3Cscript%3Ealert(1)%3C/script%3E-/debugging/] PASSED [ 86%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[%3Cscript%3Ealert(1)%3C/script%3E-/suggestions/] PASSED [ 86%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[%3Cscript%3Ealert(1)%3C/script%3E-/analyze/] PASSED [ 86%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[<scr\x00ipt>alert('xss')</scr\x00ipt>-/explanation/] PASSED [ 87%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[<scr\x00ipt>alert('xss')</scr\x00ipt>-/debugging/] PASSED [ 87%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[<scr\x00ipt>alert('xss')</scr\x00ipt>-/suggestions/] PASSED [ 87%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[<scr\x00ipt>alert('xss')</scr\x00ipt>-/analyze/] PASSED [ 87%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[\x1b[31m<script>alert(1)</script>\x1b[0m-/explanation/] PASSED [ 87%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[\x1b[31m<script>alert(1)</script>\x1b[0m-/debugging/] PASSED [ 87%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[\x1b[31m<script>alert(1)</script>\x1b[0m-/suggestions/] PASSED [ 87%]
+tests/test_sanitization_payloads.py::test_analysis_endpoints_handle_encoded_payloads[\x1b[31m<script>alert(1)</script>\x1b[0m-/analyze/] PASSED [ 88%]
+tests/test_sanitization_payloads.py::test_normal_code_still_analyzes[python-def add(a, b):\n    return a + b\n] PASSED [ 88%]
+tests/test_sanitization_payloads.py::test_normal_code_still_analyzes[python-if x < 10 and y > 0:\n    print('ok')\n] PASSED [ 88%]
+tests/test_sanitization_payloads.py::test_normal_code_still_analyzes[javascript-const add = (a, b) => a + b;\nconsole.log(add(1, 2));\n] PASSED [ 88%]
+tests/test_sanitization_payloads.py::test_normal_code_still_analyzes[cpp-#include <iostream>\nint main() { return 0; }\n] PASSED [ 88%]
+tests/test_sanitization_payloads.py::test_script_payload_in_code_snippet_is_plain_text_in_json PASSED [ 88%]
+tests/test_sanitization_payloads.py::test_stored_history_malicious_id_is_client_side_concern[stored0] PASSED [ 88%]
+tests/test_sanitization_payloads.py::test_stored_history_malicious_id_is_client_side_concern[stored1] PASSED [ 88%]
+tests/test_scheduler_observability.py::test_digest_skipped_when_disabled PASSED [ 89%]
+tests/test_scheduler_observability.py::test_digest_no_subscribers_increments_counter PASSED [ 89%]
+tests/test_scheduler_observability.py::test_digest_success_increments_counter PASSED [ 89%]
+tests/test_scheduler_observability.py::test_digest_failure_increments_failed_counter PASSED [ 89%]
+tests/test_scheduler_observability.py::test_digest_error_increments_error_counter PASSED [ 89%]
+tests/test_scheduler_observability.py::test_digest_last_run_timestamp_is_set PASSED [ 89%]
+tests/test_scheduler_observability.py::test_digest_skips_invalid_subscribers PASSED [ 89%]
+tests/test_schema_smoke.py::test_all_orm_tables_exist PASSED             [ 89%]
+tests/test_schema_smoke.py::test_database_connection PASSED              [ 90%]
+tests/test_schema_smoke.py::test_user_insert_and_query PASSED            [ 90%]
+tests/test_schema_smoke.py::test_unique_email_constraint PASSED          [ 90%]
+tests/test_schema_smoke.py::test_query_history_foreign_key PASSED        [ 90%]
+tests/test_schema_smoke.py::test_cascade_delete PASSED                   [ 90%]
+tests/test_schema_smoke.py::test_shared_snippet_insert PASSED            [ 90%]
+tests/test_schema_smoke.py::test_digest_subscription_insert PASSED       [ 90%]
+tests/test_schema_smoke.py::test_history_db_init PASSED                  [ 90%]
+tests/test_schema_smoke.py::test_history_save_and_retrieve PASSED        [ 91%]
+tests/test_schema_smoke.py::test_history_fts5_search PASSED              [ 91%]
+tests/test_schema_smoke.py::test_history_delete PASSED                   [ 91%]
+tests/test_share.py::test_create_share_requires_auth PASSED              [ 91%]
+tests/test_share.py::test_create_and_fetch_share PASSED                  [ 91%]
+tests/test_share.py::test_share_accessible_after_owner_logout PASSED     [ 91%]
+tests/test_share.py::test_expired_share_returns_404 PASSED               [ 91%]
+tests/test_share.py::test_v2_response_shape PASSED                       [ 91%]
+tests/test_share.py::test_delete_share_authorization PASSED              [ 92%]
+tests/test_subscribe.py::test_subscribe_new_email_returns_200 PASSED     [ 92%]
+tests/test_subscribe.py::test_subscribe_duplicate_active_email_returns_409 PASSED [ 92%]
+tests/test_subscribe.py::test_subscribe_email_is_normalized_to_lowercase PASSED [ 92%]
+tests/test_subscribe.py::test_subscribe_previously_unsubscribed_email_reactivates PASSED [ 92%]
+tests/test_subscribe.py::test_subscribe_missing_email_field_returns_422 PASSED [ 92%]
+tests/test_subscribe.py::test_subscribe_empty_string_email_returns_422 PASSED [ 92%]
+tests/test_subscribe.py::test_subscribe_invalid_email_format_returns_422 PASSED [ 92%]
+tests/test_subscribe.py::test_unsubscribe_post_valid_token_returns_200 PASSED [ 93%]
+tests/test_subscribe.py::test_unsubscribe_post_wrong_token_returns_403 PASSED [ 93%]
+tests/test_subscribe.py::test_unsubscribe_post_unknown_email_returns_404 PASSED [ 93%]
+tests/test_subscribe.py::test_unsubscribe_post_already_inactive_returns_404 PASSED [ 93%]
+tests/test_subscribe.py::test_unsubscribe_get_valid_params_returns_200 PASSED [ 93%]
+tests/test_subscribe.py::test_unsubscribe_get_wrong_token_returns_friendly_message PASSED [ 93%]
+tests/test_subscribe.py::test_unsubscribe_get_unknown_email_returns_friendly_message PASSED [ 93%]
+tests/test_subscribe.py::test_unsubscribe_get_already_inactive_returns_friendly_message PASSED [ 93%]
+tests/test_subscribe_observability.py::test_subscribe_success_increments_counter PASSED [ 94%]
+tests/test_subscribe_observability.py::test_subscribe_duplicate_increments_counter PASSED [ 94%]
+tests/test_subscribe_observability.py::test_subscribe_reactivated_increments_counter PASSED [ 94%]
+tests/test_subscribe_observability.py::test_unsubscribe_post_success_increments_counter PASSED [ 94%]
+tests/test_subscribe_observability.py::test_unsubscribe_post_not_found_increments_counter PASSED [ 94%]
+tests/test_subscribe_observability.py::test_unsubscribe_post_invalid_token_increments_counter PASSED [ 94%]
+tests/test_subscribe_observability.py::test_unsubscribe_get_success_increments_counter PASSED [ 94%]
+tests/test_subscribe_observability.py::test_unsubscribe_get_not_found_increments_counter PASSED [ 94%]
+tests/test_subscribe_observability.py::test_unsubscribe_get_invalid_token_increments_counter PASSED [ 95%]
+tests/test_suggestions_performance.py::test_run_suggestions_performance PASSED [ 95%]
+tests/test_user_data_error_handling.py::test_create_history_db_failure_returns_503_and_rolls_back PASSED [ 95%]
+tests/test_user_data_error_handling.py::test_delete_history_db_failure_returns_503_and_rolls_back PASSED [ 95%]
+tests/test_user_data_error_handling.py::test_clear_favorites_db_failure_returns_503_and_rolls_back PASSED [ 95%]
+tests/test_user_data_error_handling.py::test_purge_audit_db_failure_returns_503_but_keeps_deletion_scheduled PASSED [ 95%]
+tests/test_user_data_observability.py::test_purge_success_increments_counter_and_writes_audit_log PASSED [ 95%]
+tests/test_user_data_observability.py::test_purge_invalid_confirmation_increments_counter_without_audit PASSED [ 95%]
+tests/test_user_data_observability.py::test_history_create_increments_counter PASSED [ 96%]
+tests/test_user_data_observability.py::test_history_delete_not_found_increments_counter PASSED [ 96%]
+tests/test_user_data_observability.py::test_history_delete_success_increments_counter PASSED [ 96%]
+tests/test_user_data_observability.py::test_history_clear_increments_counter PASSED [ 96%]
+tests/test_user_data_observability.py::test_favorite_create_increments_counter PASSED [ 96%]
+tests/test_user_data_observability.py::test_favorite_delete_not_found_increments_counter PASSED [ 96%]
+tests/test_user_data_observability.py::test_favorite_clear_increments_counter PASSED [ 96%]
+tests/test_user_data_purge.py::test_preview_requires_authentication PASSED [ 96%]
+tests/test_user_data_purge.py::test_purge_requires_authentication PASSED [ 97%]
+tests/test_user_data_purge.py::test_preview_returns_current_user_data_counts PASSED [ 97%]
+tests/test_user_data_purge.py::test_wrong_confirmation_deletes_nothing PASSED [ 97%]
+tests/test_user_data_purge.py::test_purge_schedules_current_user_data_without_immediate_hard_delete PASSED [ 97%]
+tests/test_user_data_purge.py::test_pending_deletion_user_token_is_rejected_after_purge_request PASSED [ 97%]
+tests/test_user_data_purge.py::test_pending_deletion_user_cannot_login_again PASSED [ 97%]
+tests/test_user_data_purge.py::test_final_erase_deletes_user_data_after_retention_period PASSED [ 97%]
+tests/test_user_data_purge.py::test_audit_record_does_not_store_sensitive_user_data PASSED [ 97%]
+tests/test_user_data_purge.py::test_user_with_no_saved_data_can_schedule_and_finally_erase_account PASSED [ 98%]
+tests/test_user_data_validation.py::test_delete_history_invalid_ids PASSED [ 98%]
+tests/test_user_data_validation.py::test_delete_favorite_invalid_ids PASSED [ 98%]
+tests/test_vscode_extension_package.py::test_vscode_extension_has_standard_compile_workflow PASSED [ 98%]
+tests/test_vulnerability_db.py::test_fetch_returns_list PASSED           [ 98%]
+tests/test_vulnerability_db.py::test_cache_used_on_second_call PASSED    [ 98%]
+tests/test_vulnerability_db.py::test_network_error_returns_empty PASSED  [ 98%]
+tests/test_vulnerability_db.py::test_extract_severity_v31_sibling_of_cvss_data PASSED [ 98%]
+tests/test_vulnerability_db.py::test_extract_severity_falls_back_to_nested_cvss_data PASSED [ 99%]
+tests/test_vulnerability_db.py::test_extract_severity_empty_metric_list_returns_unknown PASSED [ 99%]
+tests/test_vulnerability_db.py::test_extract_severity_unknown PASSED     [ 99%]
+tests/test_vulnerability_db.py::test_missing_descriptions_does_not_raise PASSED [ 99%]
+tests/test_vulnerability_db.py::test_correlate_adds_package_name PASSED  [ 99%]
+tests/test_zip_dos.py::test_analyze_zip_too_large_via_header PASSED      [ 99%]
+tests/test_zip_dos.py::test_analyze_zip_too_large_via_stream PASSED      [ 99%]
+tests/test_zip_dos.py::test_analyze_zip_valid PASSED                     [100%]
+
+=============================== warnings summary ===============================
+../.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+app/schemas.py:22
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:22: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    code: str = Field(
+
+app/schemas.py:27
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:27: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    language: str | None = Field(
+
+app/schemas.py:51
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:51: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    type: str = Field(
+
+app/schemas.py:56
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:56: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    line: int | None = Field(
+
+app/schemas.py:61
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:61: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    description: str = Field(
+
+app/schemas.py:66
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:66: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    suggestion: str = Field(
+
+app/schemas.py:71
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:71: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    severity: str = Field(
+
+app/schemas.py:76
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:76: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    code_snippet: str | None = Field(
+
+app/schemas.py:81
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:81: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    code_context: str | None = Field(
+
+app/schemas.py:95
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:95: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    summary: str = Field(
+
+app/schemas.py:100
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:100: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    clean: bool = Field(
+
+app/schemas.py:105
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:105: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    error_count: int = Field(
+
+app/schemas.py:110
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:110: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    warning_count: int = Field(
+
+app/schemas.py:115
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:115: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    info_count: int = Field(
+
+app/schemas.py:120
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:120: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    code: str = Field(
+
+app/schemas.py:131
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:131: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    language: str = Field(
+
+app/schemas.py:136
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:136: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    summary: str = Field(
+
+app/schemas.py:141
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:141: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    key_points: list[str] = Field(
+
+app/schemas.py:150
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:150: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    complexity: str = Field(
+
+app/schemas.py:155
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:155: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    line_count: int = Field(
+
+app/schemas.py:160
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:160: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    function_count: int = Field(
+
+app/schemas.py:165
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:165: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    class_count: int = Field(
+
+app/schemas.py:170
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:170: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    cyclomatic_complexity: int = Field(
+
+app/schemas.py:175
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:175: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    complexity_risk: str = Field(
+
+app/schemas.py:186
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:186: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    category: str = Field(
+
+app/schemas.py:191
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:191: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    description: str = Field(
+
+app/schemas.py:196
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:196: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    line_number: int | None = Field(
+
+app/schemas.py:201
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:201: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    line_range: list[int] | None = Field(
+
+app/schemas.py:206
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:206: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    code_context: str | None = Field(
+
+app/schemas.py:211
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:211: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    example: str | None = Field(
+
+app/schemas.py:216
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:216: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    priority: str = Field(
+
+app/schemas.py:230
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:230: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    overall_score: int = Field(
+
+app/schemas.py:235
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:235: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    grade: str = Field(
+
+app/schemas.py:240
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:240: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    next_step: str = Field(
+
+app/schemas.py:245
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:245: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    dependencies: list[str] = Field(
+
+app/schemas.py:256
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:256: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    package: str = Field(
+
+app/schemas.py:261
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:261: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    cve_id: str = Field(..., description="CVE identifier.", example="CVE-2023-1234")
+
+app/schemas.py:265
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:265: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    severity: str = Field(
+
+app/schemas.py:279
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:279: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    provider: str = Field(
+
+app/schemas.py:284
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:284: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    model: str = Field(
+
+app/schemas.py:301
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:301: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    analysis_time_ms: float | None = Field(
+
+app/schemas.py:306
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:306: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    mode: str = Field(
+
+app/schemas.py:311
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:311: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    optimized_version: str | None = Field(
+
+app/schemas.py:326
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:326: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    filename: str = Field(
+
+app/schemas.py:331
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:331: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    language: str = Field(
+
+app/schemas.py:334
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:334: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    size_bytes: int = Field(..., description="File size in bytes.", example=1024)
+
+app/schemas.py:343
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:343: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    provider: str = Field(..., example="rule-based")
+
+app/schemas.py:344
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:344: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    model: str = Field(..., example="qyverix-engine-v3")
+
+app/schemas.py:345
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:345: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    file_count: int = Field(
+
+app/schemas.py:348
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:348: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    total_size_bytes: int = Field(
+
+app/schemas.py:353
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:353: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    overall_project_score: int = Field(
+
+app/schemas.py:358
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:358: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    grade: str = Field(..., description="Project-level letter grade A–F.", example="C")
+
+app/schemas.py:359
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:359: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    summary: str = Field(
+
+app/schemas.py:367
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:367: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    skipped_files: list[str] = Field(
+
+app/schemas.py:372
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:372: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    analysis_time_ms: float | None = Field(
+
+app/schemas.py:383
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:383: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    email: str = Field(
+
+app/schemas.py:390
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:390: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    password: str = Field(
+
+app/schemas.py:417
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:417: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    email: str = Field(
+
+app/schemas.py:424
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:424: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    password: str = Field(
+
+app/schemas.py:435
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:435: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    access_token: str = Field(
+
+app/schemas.py:440
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:440: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    token_type: str = Field(
+
+app/schemas.py:445
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:445: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    user_id: int = Field(
+
+app/schemas.py:448
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:448: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    email: str = Field(
+
+app/schemas.py:458
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:458: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    user_id: int = Field(
+
+app/schemas.py:461
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:461: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    email: str = Field(
+
+app/schemas.py:471
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:471: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    message: str = Field(
+
+app/schemas.py:482
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:482: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    is_admin: bool = Field(
+
+app/schemas.py:492
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:492: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    id: int = Field(..., description="Audit entry identifier.", example=1)
+
+app/schemas.py:493
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:493: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    actor_id: int | None = Field(
+
+app/schemas.py:498
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:498: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    actor_email: str = Field(
+
+app/schemas.py:503
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:503: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    action: str = Field(
+
+app/schemas.py:508
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:508: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    target_type: str | None = Field(
+
+app/schemas.py:511
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:511: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    target_id: str | None = Field(
+
+app/schemas.py:514
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:514: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    details: dict[str, Any] | None = Field(
+
+app/schemas.py:519
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:519: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    ip_address: str | None = Field(
+
+app/schemas.py:522
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:522: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    created_at: str = Field(
+
+app/schemas.py:533
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:533: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    status: str = Field(
+
+app/schemas.py:536
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:536: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    version: str = Field(..., description="API version string.", example="3.0.0")
+
+app/schemas.py:537
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:537: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    message: str = Field(
+
+app/schemas.py:542
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:542: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    endpoints: list[str] | None = Field(
+
+app/schemas.py:552
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:552: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    status: str = Field(
+
+app/schemas.py:565
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:565: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    status: str = Field(
+
+app/schemas.py:570
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:570: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    checks: dict[str, dict[str, Any]] = Field(
+
+app/schemas.py:587
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:587: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    email: str = Field(
+
+app/schemas.py:607
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:607: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    message: str = Field(
+
+app/schemas.py:612
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:612: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    email: str = Field(
+
+app/schemas.py:622
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:622: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    email: str = Field(
+
+app/schemas.py:625
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:625: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    token: str = Field(
+
+app/schemas.py:636
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:636: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    action: str = Field(
+
+app/schemas.py:643
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:643: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    code: str = Field(
+
+app/schemas.py:650
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:650: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    result_json: str = Field(
+
+app/schemas.py:677
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:677: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    id: int = Field(..., description="Unique record identifier.", example=101)
+
+app/schemas.py:678
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:678: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    action: str = Field(..., description="Analysis type.", example="debugging")
+
+app/schemas.py:681
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:681: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    created_at: str = Field(
+
+app/schemas.py:692
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:692: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    title: str = Field(
+
+app/schemas.py:699
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:699: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    action: str = Field(
+
+app/schemas.py:706
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:706: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    code: str = Field(
+
+app/schemas.py:713
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:713: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    result_json: str = Field(
+
+app/schemas.py:740
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:740: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    id: int = Field(..., description="Unique record identifier.", example=7)
+
+app/schemas.py:741
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:741: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    title: str = Field(
+
+app/schemas.py:744
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:744: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    action: str = Field(..., description="Analysis type.", example="debugging")
+
+app/schemas.py:747
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:747: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    created_at: str = Field(
+
+app/schemas.py:855
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:855: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    action: str = Field(
+
+app/schemas.py:862
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:862: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    code: str = Field(
+
+app/schemas.py:873
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:873: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    result_json: str | None = Field(
+
+app/schemas.py:906
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:906: PydanticDeprecatedSince212: Using `@model_validator` with mode='after' on a classmethod is deprecated. Instead, use an instance method. See the documentation at https://pydantic.dev/docs/validation/2.14/concepts/validators/#model-after-validator. Deprecated in Pydantic V2.12 to be removed in V3.0.
+    @model_validator(mode="after")
+
+app/schemas.py:917
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:917: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    id: str = Field(
+
+app/schemas.py:922
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:922: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    user_id: int | None = Field(
+
+app/schemas.py:927
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:927: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    action: str = Field(..., description="Analysis type.", example="analyze")
+
+app/schemas.py:930
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:930: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    created_at: str = Field(
+
+app/schemas.py:941
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:941: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    message: str = Field(
+
+app/schemas.py:948
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:948: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    code: str | None = Field(
+
+app/schemas.py:954
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:954: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    history: list[str] = Field(
+
+app/schemas.py:982
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:982: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    response: str = Field(
+
+app/schemas.py:992
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:992: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    message: str = Field(
+
+app/schemas.py:999
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:999: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    code: str | None = Field(
+
+app/schemas.py:1010
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:1010: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    level: str = Field(
+
+app/schemas.py:1042
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:1042: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    provider: str = Field(
+
+app/schemas.py:1045
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:1045: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    model: str = Field(
+
+app/schemas.py:1050
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:1050: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    mode: str = Field(..., description="Conversation mode.", example="chat")
+
+app/schemas.py:1051
+  <NSOC_WORKSPACE>/ai-dev-assistant-1408/backend/app/schemas.py:1051: PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.14/migration/
+    reply: str = Field(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: <NSOC_WORKSPACE>/evidence/20261125-0938-hourly/ai-head-full.xml -
+====================== 792 passed, 122 warnings in 33.88s ======================

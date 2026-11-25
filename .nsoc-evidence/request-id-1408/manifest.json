@@ -1,0 +1,143 @@
+{
+  "issue": "https://github.com/imDarshanGK/AI-dev-assistant/issues/1408",
+  "pr": "https://github.com/imDarshanGK/AI-dev-assistant/pull/1817",
+  "sourceRepository": "https://github.com/divyanshAgarwal123/AI-dev-assistant",
+  "sourceHead": "1d03da1be265dc8fbeb1721cba25be00eb54c778",
+  "actualSourceParent": "5d26c8feeaa84db01a764ae15e45d7522b143001",
+  "sourceBlobs": [
+    {
+      "path": "backend/tests/test_request_id_logging.py",
+      "gitBlobOid": "8a53b7e14d2e9914763a1b5a5ba984d8941abef2"
+    }
+  ],
+  "capturedAt": "2026-11-25T09:48:31.288767+00:00",
+  "checks": {
+    "headPython311TestsPassed": 792,
+    "headPython312TestsPassed": 792,
+    "parentPython312TestsPassed": 789,
+    "headFailures": 0,
+    "headSkips": 0,
+    "staticAllPass": true,
+    "sourceCommitRangeSecrets": 0,
+    "warningsEach": 122
+  },
+  "limitations": [
+    "LocalmacOSPython3.11/3.12results, not hostedLinuxCI execution. FourGitHubworkflowsstillaction_required; draftkept.",
+    "NativeQA5.48setupchecksumverified; requiredLOGFORMATprintf andnativeDYLD/MAGICconfigured. CleanCIcredentialfreeenv usesownedSQLite anddisablesdotenvloading; no modulesexcluded orprojectgateschanged.",
+    "Projectrequirementsareunlocked; exactruntimeversionslisted; hosteddependencyresolutionmaydiffer. No sourceorrequirementschangedthisrun.",
+    "Fullchecks use the entirebackendcollection; PostgreSQLsmokejobhasseparatepathfiltersandwasnottriggeredbythisfile; noPostgreSQLacceptanceclaimed.",
+    "Publictranscriptsnormalizeabsolutelocalpathsandwhitespace; exacttestcounts andJUnitresults preserved."
+  ],
+  "artifacts": [
+    {
+      "path": "ai-head-full.txt",
+      "sha256": "12c650cd61e2dfd3f5d5330075c9a10ebf3e14cfb4b785925b4807bc41b75918",
+      "bytes": 135821
+    },
+    {
+      "path": "ai-parent-full.txt",
+      "sha256": "b14fbb22ca195f18abcce97425ba90c10653dc1c4a45d817227ba72e73b4601f",
+      "bytes": 134571
+    },
+    {
+      "path": "ai311-head-full.txt",
+      "sha256": "7cca5947ea1a7ae2da096e1b42e20582e0361307a6269a1195ecd1323af278ad",
+      "bytes": 135829
+    },
+    {
+      "path": "ai-head-full.xml",
+      "sha256": "65c8b16d6b09fe89b147637d628d2d5ee0660e1579c8f47ffa0b904aea9ca179",
+      "bytes": 110352
+    },
+    {
+      "path": "ai-parent-full.xml",
+      "sha256": "9f610c67ed5d4c9a8c7f45bd5ef82fecceb94876472381f9728065b078b70c22",
+      "bytes": 109949
+    },
+    {
+      "path": "ai311-head-full.xml",
+      "sha256": "b7c24e3728bde52d382fced404f5eba08c5d7c11070c89456d37ccdc4fedec55",
+      "bytes": 110352
+    },
+    {
+      "path": "ai-head-full-result.json",
+      "sha256": "098acec5175626c37d90b476f519f8d3e84742a5b1d60178de7998172757d1bd",
+      "bytes": 593
+    },
+    {
+      "path": "ai-parent-full-result.json",
+      "sha256": "78f3bda6de33305cd7cb5504421581d876c2e80999f46ea40dd18bf885db87f1",
+      "bytes": 597
+    },
+    {
+      "path": "ai311-head-full-result.json",
+      "sha256": "7556850ce69e149ae5272a753d59ee71bc605e0fd987e7f6aac03d4423474e7f",
+      "bytes": 596
+    },
+    {
+      "path": "ai-validation-summary.json",
+      "sha256": "e500e87c302eaf9f8210a9348ee8bc9d365a5a73f9d92f35cf7efbdf6cd4f901",
+      "bytes": 1940
+    },
+    {
+      "path": "ai-runtime-versions.json",
+      "sha256": "24351f153b4416510685e1ea950ca35375c4a20d2aed2722f62c0389d82448d6",
+      "bytes": 797
+    },
+    {
+      "path": "ai-static-checks.json",
+      "sha256": "1bb378af3c0e080bdb6ae156fde5060f5fde38d3592c708aeb8e6365c1f2074e",
+      "bytes": 309
+    },
+    {
+      "path": "ai-matrix-counts.json",
+      "sha256": "9750d92f4ec8012e9c5fb1e2a36a570dc6d8ab667c7e5d7f80bd74c70218173e",
+      "bytes": 365
+    },
+    {
+      "path": "run-ai-suite.py",
+      "sha256": "7d1161797097bb6c22e248cc0a7434747d1d523d3529684fe7872673bf8d910a",
+      "bytes": 1863
+    },
+    {
+      "path": "run-ai311-suite.py",
+      "sha256": "b2d7ef36ea7d929c85a929fe2babbb918d6e03544bf06bae23bd2c8c3b64d08e",
+      "bytes": 1870
+    },
+    {
+      "path": "libmagic-build-proof.json",
+      "sha256": "71ca08330716bafe7ab434b2ec0138779c0da0cc8189f9bf86f0494fd230448b",
+      "bytes": 651
+    },
+    {
+      "path": "ai-app-ruff.txt",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    {
+      "path": "ai-changed-ruff.txt",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    {
+      "path": "ai-black.txt",
+      "sha256": "1a56c7cd8457fd05d978cfbd139d7bfd86e86acaa9b57668e718ef8bccc0cf48",
+      "bytes": 55
+    },
+    {
+      "path": "ai-isort.txt",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "ai-diff.txt",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "ai-source-secrets.txt",
+      "sha256": "339cd760933e2f7ccf2c19afc1b5083377871a3fc7e4aa0b5f35b34dc1b57739",
+      "bytes": 106
+    }
+  ]
+}

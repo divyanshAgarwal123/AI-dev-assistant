@@ -1,0 +1,69 @@
+{
+  "issue": "https://github.com/imDarshanGK/AI-dev-assistant/issues/1408",
+  "pr": "https://github.com/imDarshanGK/AI-dev-assistant/pull/1817",
+  "head": "1d03da1be265dc8fbeb1721cba25be00eb54c778",
+  "actualParent": "5d26c8feeaa84db01a764ae15e45d7522b143001",
+  "files": [
+    {
+      "path": "backend/tests/test_request_id_logging.py",
+      "gitBlobOid": "8a53b7e14d2e9914763a1b5a5ba984d8941abef2"
+    }
+  ],
+  "localFullSuite": {
+    "ai-head": {
+      "tests": 792.0,
+      "failures": 0.0,
+      "errors": 0.0,
+      "skipped": 0.0,
+      "time": 33.871
+    },
+    "ai-parent": {
+      "tests": 789.0,
+      "failures": 0.0,
+      "errors": 0.0,
+      "skipped": 0.0,
+      "time": 34.301
+    },
+    "ai311-head": {
+      "tests": 792.0,
+      "failures": 0.0,
+      "errors": 0.0,
+      "skipped": 0.0,
+      "time": 37.409
+    }
+  },
+  "static": [
+    {
+      "name": "app-ruff",
+      "exitCode": 0
+    },
+    {
+      "name": "changed-ruff",
+      "exitCode": 0
+    },
+    {
+      "name": "black",
+      "exitCode": 0
+    },
+    {
+      "name": "isort",
+      "exitCode": 0
+    },
+    {
+      "name": "diff",
+      "exitCode": 0
+    },
+    {
+      "name": "source-secrets",
+      "exitCode": 0
+    }
+  ],
+  "sourceChangedThisRun": false,
+  "projectRequirementsChanged": false,
+  "testModulesSkipped": 0,
+  "warningsEach": 122,
+  "nativeSetup": "PrivateQA libmagic5.48 fromofficialrelease withpublishedHomebrewSHA256; old/tmpnativeprefixhad disappeared. No globalpackage/tapchanges.",
+  "isolation": "Credentialsnotinherited;dotenvloadingdisabledtoemulatecleanCIcheckout;ownedSQLitepaths;validprintfLOG_FORMAT; canonicalRATE_LIMIT_PER_MINUTE300 preserved. No test or workflowtimeout/assertion/gatechanged.",
+  "remaining": "Hostedfourworkflowrunsrequiremaintainerapproval; Linuxrunnermatrixnotclaimedexecuted; PostgreSQLschemajobnottriggeredbychangedtestpath; no gradeinvented.",
+  "checkedAt": "2026-11-25T09:48:07.159752+00:00"
+}

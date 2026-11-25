@@ -1,0 +1,11 @@
+{
+  "side": "head",
+  "head": "1d03da1be265dc8fbeb1721cba25be00eb54c778",
+  "startedAt": "2026-11-25T09:46:09.361075+00:00",
+  "finishedAt": "2026-11-25T09:46:47.673981+00:00",
+  "exitCode": 0,
+  "stoppedAfterDiagnostic180Seconds": false,
+  "log": "<NSOC_WORKSPACE>/evidence/20261125-0938-hourly/ai311-head-full.log",
+  "noModulesSkipped": true,
+  "localRuntime": "Privatechecksumverifiedlibmagic5.48;dotenvdisabledtoemulatecleanCIcheckout;Python3.11.15; existing requirements-conformingvenv; credentialfreeenvironment; ownedSQLitepath; workflowRATE_LIMIT_PER_MINUTE300; validprintfLOG_FORMAT"
+}
